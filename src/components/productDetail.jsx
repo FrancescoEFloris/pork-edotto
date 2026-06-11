@@ -24,7 +24,8 @@ function ProductDetail() {
         <div>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
-            <Link to="/">Torna alla Home</Link>
+            <Link to={`/products`} > Torna a tutti i prodotti </Link>
+            <Link to="/"> Torna alla Home </Link>
         </div>
     );
 }
