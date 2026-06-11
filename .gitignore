@@ -25,4 +25,3 @@ dist-ssr
 
 # Extra stuff
 .env
-00-create-schema.sql

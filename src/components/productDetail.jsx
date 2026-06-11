@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProduct } from './product';
-import CardProduct from './components/CardProduct';
+import getProduct from "../handlers/product";
 
 function ProductDetail() {
 
@@ -12,20 +11,21 @@ function ProductDetail() {
     useEffect(() => {
 
         getProduct(id)
-            .then(product => {
-                setProduct(product);
+            .then(response => {
+                setProduct(response);
             })
             .catch(error => {
                 console.error(error);
             });
 
     }, [id]);
-
     return (
-    <div>
-        <CardProduct product ={product} />
-    </div>
-    )
+        <div>
+            <h1>{product.title}</h1>
+            <p>{product.description}</p>
+        </div>
+    );
 }
+
 
 export default ProductDetail;

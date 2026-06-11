@@ -1,7 +1,12 @@
-export default function Main() {
+import ProductsList from "./ProductsList.jsx";
+
+function Main() {
+
     return (
-        <div className="bg-body-tertiary">
-            <Navbar />
-        </div>
+        <main>
+            <ProductsList />
+        </main>
     );
 }
+
+export default Main;
