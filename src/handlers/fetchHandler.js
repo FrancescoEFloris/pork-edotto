@@ -3,7 +3,7 @@ const DB_URL = 'http://localhost:3000/products';
 async function fetchProducts() {
   try {
     const data = await fetch(DB_URL);
-    
+
     return await data.json();
 
   } catch (error) {
