@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProduct } from './product';
+import CardProduct from './components/CardProduct';
 
 function ProductDetail() {
 
@@ -19,4 +20,10 @@ function ProductDetail() {
             });
 
     }, [id]);
+
+    return (
+    <div>
+        <CardProduct product ={product} />
+    </div>
+    )
 }
