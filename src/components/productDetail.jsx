@@ -23,7 +23,9 @@ function ProductDetail() {
     }, [id]);
     return (
         <div>
-           <CardProduct product={product} />
+            <Link to={`/products`} > Torna a tutti i prodotti </Link>
+            <Link to="/"> Torna alla Home </Link>
+            <CardProduct product={product} />
         </div>
     );
 }
