@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import fetchProducts from '../handlers/fetchHandler.js';
+
 
 function ProductsList() {
     const [products, setProducts] = useState([]);
@@ -16,7 +18,7 @@ function ProductsList() {
         }
         loadData();
     }, []);
-    console.log("Contenuto attuale di products:", products);
+    // console.log(products);
     if (error) return <p>Errore: {error}</p>;
 
     return (
@@ -24,17 +26,21 @@ function ProductsList() {
             {products.length === 0 ? (
                 <p>Caricamento prodotti</p>
             ) : (
-                <ul className="products-list">
-                    {products.map((product) => (
-                        <li key={product.id} className="product-item">
-                            <h3>{product.name}</h3>
-                            <p>{product.description}</p>
-                        </li>
+                <div className='products-wrapper'>
+                    {products.map((thisProduct) => (
+                        <div key={thisProduct.id} className="product-item">
+                            <h3>{thisProduct.name}</h3>
+                            <p>{thisProduct.description}</p>
+                            <Link to={`/${thisProduct.id}`} element={<product />} >
+                                <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
+                            </Link>
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     );
 }
 
 export default ProductsList;
+
