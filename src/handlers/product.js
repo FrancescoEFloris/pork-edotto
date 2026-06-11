@@ -1,4 +1,4 @@
-const API_URL = "http://locallhost:3000";
+const API_URL = "http://localhost:3000";
 
 function getProduct(id) {
 
@@ -18,4 +18,4 @@ function getProduct(id) {
         });
 }
 
-export { getProduct };
+export default getProduct;
