@@ -3,31 +3,25 @@ import styles from "./Header.module.css";
 function Header() {
     return (
         <header className={`${styles.header}`}>
-            <div className="logo-container">
+            <div className={`${styles.logoContainer}`}>
                 <h1>IL PORK - EDOTTO</h1>
             </div>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse d-flex" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <nav className="">
+                <div className="container-fluid">
+                        <ul className="d-flex justify-content-around">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Menù</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Peer-Reviews</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Chi siamo</a>
                             </li>
                         </ul>
-                    </div>
                 </div>
             </nav>
         </header>

@@ -1,6 +1,12 @@
 .header {
     color: var(--title-color);
+    font-size: larger;
     text-align: center;
-    padding-bottom: 10px;
+    padding: 15px;
+    padding-bottom: 25px;
     border-bottom: 2px solid white;
+}
+
+.logoContainer {
+    padding-bottom: 10px;
 }
