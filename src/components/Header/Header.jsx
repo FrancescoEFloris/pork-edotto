@@ -4,8 +4,7 @@ function Header() {
     return (
         <header className={`${styles.header}`}>
             <div className="logo-container">
-                <h1>IL PORK - EDOTTO</h1>
-            </div>
+                <h1>IL PORK - EDOTTO</h1>  
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <button
