@@ -2,6 +2,10 @@
 
 function CardProduct({product}) {
 
+     if (!product.id) {
+        return <p>Caricamento prodotto...</p>;
+    }
+
     return 
      (
         <div className="container my-4">

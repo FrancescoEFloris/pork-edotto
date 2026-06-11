@@ -7,7 +7,7 @@ function ProductDetail() {
 
     const { id } = useParams();
 
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState({});
 
     useEffect(() => {
 
@@ -27,3 +27,5 @@ function ProductDetail() {
     </div>
     )
 }
+
+export default ProductDetail;
