@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import getProduct from "../handlers/product";
 
 function ProductDetail() {
@@ -23,6 +24,7 @@ function ProductDetail() {
         <div>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
+            <Link to="/">Torna alla Home</Link>
         </div>
     );
 }
