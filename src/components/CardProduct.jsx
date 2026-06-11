@@ -1,10 +1,12 @@
 
 
-function CardProduct({product}) {
+function CardProduct({ product }) {
 
-     if (!product.id) {
+    if (!product.id) {
         return <p>Caricamento prodotto...</p>;
     }
+
+    const formattedPrice = product.price.toFixed(2).replace('.', ',');
 
     return (
         <div className="container my-4">
@@ -31,7 +33,7 @@ function CardProduct({product}) {
 
                         <div className="col-12 col-md-6">
                             <strong>Prezzo:</strong>
-                            <p className="mb-0">€ {product.price}</p>
+                            <p className="mb-0">€ {formattedPrice}</p>
                         </div>
 
                         <div className="col-12 col-md-6">
