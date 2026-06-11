@@ -1,13 +1,12 @@
 
 
-function CardProduct({product}) {
+function CardProduct({ product }) {
 
-     if (!product.id) {
+    if (!product.id) {
         return <p>Caricamento prodotto...</p>;
     }
 
-    return 
-     (
+    return (
         <div className="container my-4">
             <div className="card">
 
