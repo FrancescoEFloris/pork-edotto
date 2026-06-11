@@ -1,7 +1,11 @@
-export default function Footer() {
+
+
+function Footer() {
     return (
-        <div className="bg-body-tertiary">
-            Footer
-        </div>
+        <footer>
+
+        </footer>
     );
 }
+
+export default Footer;
