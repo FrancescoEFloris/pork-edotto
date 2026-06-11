@@ -6,19 +6,26 @@ function ProductDetail() {
 
     const { id } = useParams();
 
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState({});
 
     useEffect(() => {
 
         getProduct(id)
-            .then(product => {
-                setProduct(product);
+            .then(response => {
+                setProduct(response);
             })
             .catch(error => {
                 console.error(error);
             });
 
     }, [id]);
+    return (
+        <div>
+            <h1>{product.title}</h1>
+            <p>{product.description}</p>
+        </div>
+    );
 }
+
 
 export default ProductDetail;

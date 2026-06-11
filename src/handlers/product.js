@@ -1,21 +1,17 @@
 const API_URL = "http://localhost:3000";
 
-function getProduct(id) {
-
+async function getProduct(id) {
     const url = `${API_URL}/products/${id}`;
 
-    return fetch(url)
-        .then((response) => {
+    const response = await fetch(url);
 
-            if (!response.ok) {
-                throw new Error(`Errore ${response.status}`);
-            }
+    if (!response.ok) {
+        throw new Error(`Errore ${response.status}`);
+    }
 
-            return response.json();
-        })
-        .then((data) => {
-            return data.results[0];
-        });
+    const data = await response.json();
+
+    return data;
 }
 
 export default getProduct;

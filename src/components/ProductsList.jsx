@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import fetchProducts from '../handlers/fetchHandler.js';
+import ProductDetail from './ProductDetail.jsx';
 
 
 function ProductsList() {
@@ -31,7 +32,7 @@ function ProductsList() {
                         <div key={thisProduct.id} className="product-item">
                             <h3>{thisProduct.name}</h3>
                             <p>{thisProduct.description}</p>
-                            <Link to={`/${thisProduct.id}`} element={<product />} >
+                            <Link to={`/products/${thisProduct.id}`} >
                                 <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
                             </Link>
                         </div>
