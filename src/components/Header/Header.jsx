@@ -3,27 +3,27 @@ import styles from "./Header.module.css";
 function Header() {
     return (
         <header className={`${styles.header}`}>
-            <div className="logo-container"></div>
+
+            <div className={`${styles.logoContainer}`}>
                 <h1>IL PORK - EDOTTO</h1>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            </div>
+            <nav className="">
+
                 <div className="container-fluid">
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon" />
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul className="navbar-nav ms-auto">Ciao</ul>
-                        <ul className="navbar-nav ms-auto">Ciao</ul>
-                        <ul className="navbar-nav ms-auto">Ciao</ul>
-                        <ul className="navbar-nav ms-auto">Ciao</ul>
-                    </div>
+                        <ul className="d-flex justify-content-around">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Home</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Menù</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Peer-Reviews</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Chi siamo</a>
+                            </li>
+                        </ul>
                 </div>
             </nav>
         </header>
