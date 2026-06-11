@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import getProduct from "../handlers/product";
+import CardProduct from "./cardProduct";
 
 function ProductDetail() {
 
@@ -22,9 +23,7 @@ function ProductDetail() {
     }, [id]);
     return (
         <div>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
-            <Link to="/">Torna alla Home</Link>
+           <CardProduct product={product} />
         </div>
     );
 }
