@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import getProduct from "../handlers/product";
-import CardProduct from "./CardProduct";
-import ReviewsListSingleProduct from "../ReviewsListSingleProduct";
+import getProduct from '../../handlers/product'
+import CardProduct from './CardProduct'
+import ReviewsListSingleProduct from "../Reviews/ReviewsListSingleProduct"
 
 
 function ProductDetail() {
 
     const { id } = useParams();
 
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState({ reviews: [] });
 
     useEffect(() => {
 

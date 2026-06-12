@@ -1,5 +1,4 @@
 /* Font import */
-
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
 /* VARIABILI CSS */
@@ -31,6 +30,10 @@ main {
     padding-top: 35px;
     padding-left: 20px;
     margin-bottom: 160px;
+}
+
+@media ( max-width: 991px ) {
+    main { border-top: none;}
 }
 
 a {
