@@ -1,24 +1,24 @@
+import styles from "./LastProducts.module.css";
+
 function LastProducts() {
     return (
         <>
-            <div class="restaurant-card">
+            <div className={`${styles.restaurantCard}`}>
                 <h2>Ultimi piatti</h2>
                 
-
-
-                <div class="carouselTrack">
-                    <div class="carouseItem">
+                <div className={`${styles.carouselTrack}`}>
+                    <div className={`${styles.carouselItem}`}>
                         <img src="" alt="" />
                         <h3>PIATTO 1</h3>
                         <p>€ 12.00</p>
                     </div>
-                    <div class="carouseItem">
-                        <img src="" alt="Pizza Margherita" />
+                    <div className={`${styles.carouselItem}`}>
+                        <img src="" alt="" />
                         <h3>PIATTO 2</h3>
                         <p>€ 8.00</p>
                     </div>
-                    <div class="carouselItem">
-                        <img src="" alt="Tiramisù" />
+                    <div className={`${styles.carouselItem}`}>
+                        <img src="" alt="" />
                         <h3>PIATTO 3</h3>
                         <p>€ 6.00</p>
                     </div>
