@@ -23,24 +23,26 @@ function ProductsList() {
     if (error) return <p>Errore: {error}</p>;
 
     return (
-        <div className="products-container">
-            <Link to="/">Torna alla Home</Link>
-            {products.length === 0 ? (
-                <p>Caricamento prodotti</p>
-            ) : (
-                <div className='products-wrapper'>
-                    {products.map((thisProduct) => (
-                        <div key={thisProduct.id} className="product-item">
-                            <h3>{thisProduct.name}</h3>
-                            <p>{thisProduct.description}</p>
-                            <Link to={`/products/${thisProduct.id}`} >
-                                <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </div>
+        <main>
+            <div className="products-container">
+                <Link to="/">Torna alla Home</Link>
+                {products.length === 0 ? (
+                    <p>Caricamento prodotti</p>
+                ) : (
+                    <div className='products-wrapper'>
+                        {products.map((thisProduct) => (
+                            <div key={thisProduct.id} className="product-item">
+                                <h3>{thisProduct.name}</h3>
+                                <p>{thisProduct.description}</p>
+                                <Link to={`/products/${thisProduct.id}`} >
+                                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </main>
     );
 }
 

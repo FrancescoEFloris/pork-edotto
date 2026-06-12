@@ -13,3 +13,7 @@ body {
     background: var(--bg-color);
     margin: 0;
 }
+
+main {
+    border-top: 65px solid rgba(127, 8, 8, 0.655);
+}
