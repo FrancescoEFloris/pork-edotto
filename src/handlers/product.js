@@ -11,7 +11,7 @@ async function getProduct(id) {
 
     const data = await response.json();
 
-    return data;
+    return data.data;
 }
 
 export default getProduct;

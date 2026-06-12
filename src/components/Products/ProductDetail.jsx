@@ -9,7 +9,7 @@ function ProductDetail() {
 
     const { id } = useParams();
 
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState({ reviews: [] });
 
     useEffect(() => {
 
