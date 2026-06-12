@@ -1,7 +1,7 @@
 /* Font import */
 
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
 /* VARIABILI CSS */
 
 :root {
@@ -12,12 +12,15 @@
     --title-color: #000000;
     --text-color: #d69a9a;
     --font-display: 'IM Fell DW Pica', serif;
-    --font-title: "Alfa Slab One", serif;
+    --font-title: "Bowlby One", serif;
 }
 
 /* GENERALI */
 
-body {
+
+
+
+font body {
     background: var(--bg-color);
     font-family: var(--font-display);
     margin: 0;
