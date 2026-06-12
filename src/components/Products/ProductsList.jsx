@@ -38,8 +38,8 @@ const wrapper = (
 
     return (
         <main>
+            <Link to="/" className='navigateBtn'>Torna alla Home</Link>
             <div className="products-container">
-                <Link to="/">Torna alla Home</Link>
                 {products.length === 0 ? (
                     <p>Caricamento prodotti</p>
                 ) : wrapper}

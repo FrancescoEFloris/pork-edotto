@@ -8,6 +8,7 @@
             --bg-color: #fdfee6;
             --surface-color: #656d77;
             --red: rgb(215, 106, 106);
+            --golden: #d5c4305f;
             --title-color: #000000;
             --text-color: #d69a9a;
             --font-display: 'IM Fell DW Pica', serif;
@@ -25,4 +26,21 @@ body {
 main {
     border-top: 65px solid var(--red);
     margin-bottom: 160px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Specifici */
+
+.navigateBtn {
+    display: block;
+    background-color: var(--golden);
+    width: 160px;
+    font-family: var(--font-title);
+    margin: 20px auto;
+    text-align: center;
+    transform: scale(160%);
 }

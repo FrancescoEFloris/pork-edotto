@@ -5,25 +5,21 @@
     top: 0;
     width: 100%;
     font-family: var(--font-title);
+    background-color: rgb(255, 251, 219);
+    z-index: 99;
 }
 
 .logoContainer {
     padding-bottom: 10px;
-}
-
-.headContainer {
-    background: #F1ECE0;
+    background-color: var(--golden);
+    justify-content: center;
 }
 
 .imgContainer {
-    width: 100%;
-}
-
-.navPages {
-    background-color: rgba(255, 255, 255, 0.405);
+    width: 90%;
 }
 
 .navPages li:hover {
-    background-color: rgba(255, 255, 255, 0.637);
+    background-color: var(--golden);
     transform: scale(105%);
 }
