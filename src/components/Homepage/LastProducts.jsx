@@ -20,15 +20,20 @@ function LastProducts() {
 
                 <div className={`${styles.carouselTrack}`}>
                     {dishes.length > 0 ? (
-                        dishes.map((dish) => (
-                            <div className={`${styles.carouselItem}`}>
-                                <Link to={`/products/${dish.id}`} >
-                                    <img src={dish.image} alt={dish.name} />
-                                </Link>
-                                <h3>{dish.name}</h3>
-                                <p>€ {dish.price}</p>
-                            </div>
-                        ))
+                        dishes.map((dish) => {
+
+                            const formattedPrice = Number(dish.price).toFixed(2).replace('.', ',');
+
+                            return (
+                                <div className={`${styles.carouselItem}`} key={dish.id}>
+                                    <Link to={`/products/${dish.id}`} >
+                                        <img src={dish.image} alt={dish.name} />
+                                    </Link>
+                                    <h3>{dish.name}</h3>
+                                    <p>€ {formattedPrice}</p>
+                                </div>
+                            );
+                        })
                     ) : (
                         <p>Caricamento piatti recenti...</p>
                     )}
