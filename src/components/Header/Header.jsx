@@ -1,14 +1,22 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from "./Header.module.css";
 
 function Header() {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const getNavLinkClass = ({ isActive }) =>
+        `nav-link d-inline-block ${isActive ? 'active' : ''}`;
     return (
         <header className={`${styles.header}`}>
             <div className={`container-fluid ${styles.headContainer}`}>
-                <div className="row align-items-center">
+                <div className="row align-items-center position-relative">
 
-                    {/* LOGO: Al lato (sinistra). Più grande su md/lg, leggermente ridotto in sm */}
-                    <div className="col-4 col-md-3 col-lg-3">
+                    <div className="col-6 col-xl-3">
                         <div className={`${styles.logoContainer}`}>
                             <div className={`${styles.imgContainer}`}>
                                 <img
@@ -20,73 +28,35 @@ function Header() {
                         </div>
                     </div>
 
-                    {/* NAVBAR: Allineata a sinistra con layout fluido dei NavItems */}
-                    <div className={`col-8 col-md-9 col-lg-9 py-lg-3 py-0 ${styles.navPages}`}>
-                        <ul className="row row-cols-2 row-cols-lg-4 list-unstyled m-0 p-0 text-center align-items-center">
-                            <li>
-                                <NavLink
-                                    className={function (state) {
-                                        if (state.isActive) {
-                                            return 'nav-link d-inline-block active';
-                                        } else {
-                                            return 'nav-link d-inline-block';
-                                        }
-                                    }}
-                                    to="/"
-                                >
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li className="col nav-item mb-2 mb-lg-0">
-                                <NavLink
-                                    className={function (state) {
-                                        if (state.isActive) {
-                                            return 'nav-link d-inline-block active';
-                                        } else {
-                                            return 'nav-link d-inline-block';
-                                        }
-                                    }}
-                                    to="/products"
-                                >
-                                    Menu
-                                </NavLink>
-                            </li>
-                            <li className="col nav-item mb-2 mb-lg-0">
-                                <NavLink
-                                    className={function (state) {
-                                        if (state.isActive) {
-                                            return 'nav-link d-inline-block active';
-                                        } else {
-                                            return 'nav-link d-inline-block';
-                                        }
-                                    }}
-                                    to="/pippo"
-                                >
-                                    Peer-Reviews
-                                </NavLink>
-                            </li>
-                            <li className="col nav-item mb-2 mb-lg-0">
-                                <NavLink
-                                    className={function (state) {
-                                        if (state.isActive) {
-                                            return 'nav-link d-inline-block active';
-                                        } else {
-                                            return 'nav-link d-inline-block';
-                                        }
-                                    }}
-                                    to="/aboutus"
-                                >
-                                    Chi siamo
-                                </NavLink>
-                            </li>
+                    <div className="col-6 col-xl-9 d-flex justify-content-end justify-content-xl-start align-items-center">
+
+                        <ul className={`list-unstyled m-0 p-0 text-center align-items-center ${styles.navDesktop}`}>
+                            <li><NavLink className={getNavLinkClass} to="/">Home</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/products">Menu</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/pippo">Peer-Reviews</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/aboutus">Chi siamo</NavLink></li>
+                        </ul>
+
+                        <button
+                            className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
+                            onClick={toggleMenu}
+                            aria-label="Menu"
+                        >
+                            <span className={styles.bar}></span>
+                            <span className={styles.bar}></span>
+                            <span className={styles.bar}></span>
+                        </button>
+
+                        <ul className={`${styles.navMobile} ${isOpen ? styles.active : ''} list-unstyled m-0 p-0 text-center`}>
+                            <li><NavLink className={getNavLinkClass} to="/" onClick={toggleMenu}>Home</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/products" onClick={toggleMenu}>Menu</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/pippo" onClick={toggleMenu}>Peer-Reviews</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/aboutus" onClick={toggleMenu}>Chi siamo</NavLink></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </header>
-
     );
 }
-
 export default Header;

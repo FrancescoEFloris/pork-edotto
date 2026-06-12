@@ -4,10 +4,10 @@
 /* VARIABILI CSS */
 
 :root {
-    --bg-color: #fdfee6;
+    --bg-color: #00065e;
     --surface-color: #656d77;
-    --red: rgb(215, 106, 106);
-    --golden: #d5c4305f;
+    --red: rgb(0, 0, 0);
+    --blue: #08adfa5f;
     --title-color: #000000;
     --text-color: #d69a9a;
     --font-display: 'IM Fell DW Pica', serif;
@@ -16,9 +16,6 @@
 
 /* GENERALI */
 
-
-
-
 font body {
     background: var(--bg-color);
     font-family: var(--font-display);
@@ -26,14 +23,16 @@ font body {
 }
 
 main {
-    border-top: 65px solid var(--red);
+
     padding-top: 35px;
     padding-left: 20px;
-    margin-bottom: 160px;
+    margin-bottom: 16px;
 }
 
-@media ( max-width: 991px ) {
-    main { border-top: none;}
+@media (max-width: 991px) {
+    main {
+        border-top: none;
+    }
 }
 
 a {
@@ -45,7 +44,7 @@ a {
 
 .navigateBtn {
     display: block;
-    background-color: var(--golden);
+    background-color: var(--blue);
     width: 160px;
     font-family: var(--font-title);
     margin: 20px auto;
