@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ProductsList from "./ProductsList.jsx";
+import ProductsList from "./Products/ProductsList.jsx";
 
 function Main() {
 

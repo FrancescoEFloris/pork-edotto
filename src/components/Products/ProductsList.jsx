@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import fetchProducts from '../handlers/fetchHandler.js';
+import fetchProducts from '../../handlers/fetchHandler.js';
 import ProductDetail from './ProductDetail.jsx';
 
 

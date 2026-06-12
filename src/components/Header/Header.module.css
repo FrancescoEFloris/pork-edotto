@@ -1,9 +1,10 @@
 .header {
     color: var(--title-color);
-    font-size: x-large;
+    font-size: xx-large;
     position: sticky;
     top: 0;
     width: 100%;
+    font-family: var(--font-title);
 }
 
 .logoContainer {
