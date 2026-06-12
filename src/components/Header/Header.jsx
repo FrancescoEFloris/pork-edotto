@@ -29,10 +29,10 @@ function Header() {
                                 <a className="nav-link d-inline-block" href="/products">Menù</a>
                             </li>
                             <li className="col nav-item mb-2 mb-lg-0">
-                                <a className="nav-link d-inline-block" href="/">Peer-Reviews</a>
+                                <a className="nav-link d-inline-block" href="/pippo">Peer-Reviews</a>
                             </li>
                             <li className="col nav-item mb-2 mb-lg-0">
-                                <a className="nav-link d-inline-block" href="/">Chi siamo</a>
+                                <a className="nav-link d-inline-block" href="/aboutus">Chi siamo</a>
                             </li>
                         </ul>
                     </div>
