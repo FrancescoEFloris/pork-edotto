@@ -1,29 +1,36 @@
 import styles from "./LastProducts.module.css";
+import { useState, useEffect } from 'react';
+import getRecentDishes from "../../handlers/getRecentDishes";
 
 function LastProducts() {
+    const [dishes, setDishes] = useState([]);
+
+    useEffect(() => {
+        const fetchDishes = async () => {
+            const recentDishes = await getRecentDishes();
+            setDishes(recentDishes);
+        };
+        fetchDishes();
+    }, []);
     return (
         <>
             <div className={`${styles.restaurantCard}`}>
                 <h2>Ultimi piatti</h2>
-                
+
                 <div className={`${styles.carouselTrack}`}>
-                    <div className={`${styles.carouselItem}`}>
-                        <img src="" alt="" />
-                        <h3>PIATTO 1</h3>
-                        <p>€ 12.00</p>
-                    </div>
-                    <div className={`${styles.carouselItem}`}>
-                        <img src="" alt="" />
-                        <h3>PIATTO 2</h3>
-                        <p>€ 8.00</p>
-                    </div>
-                    <div className={`${styles.carouselItem}`}>
-                        <img src="" alt="" />
-                        <h3>PIATTO 3</h3>
-                        <p>€ 6.00</p>
-                    </div>
+                    {dishes.length > 0 ? (
+                        dishes.map((dish) => (
+                            <div className={`${styles.carouselItem}`}>
+                                <img src={dish.image} alt={dish.name} />
+                                <h3>{dish.name}</h3>
+                                <p>€ {dish.price}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>Caricamento piatti recenti...</p>
+                    )}
                 </div>
-            </div>
+            </div >
         </>
     );
 }
