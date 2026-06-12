@@ -1,4 +1,4 @@
-const DB_URL = "http://localhost:3000/products?sortBy=recent&limit=4"
+const DB_URL = "http://localhost:3000/products?sortBy=recent&limit=5"
 
 async function getRecentDishes() {
     try {
