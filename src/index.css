@@ -25,6 +25,8 @@ body {
 
 main {
     border-top: 65px solid var(--red);
+    padding-top: 35px;
+    padding-left: 20px;
     margin-bottom: 160px;
 }
 

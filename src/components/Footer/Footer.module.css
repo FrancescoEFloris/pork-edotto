@@ -1,15 +1,17 @@
 .footer {
     background-color: var(--red);
-
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     z-index: 10;
-    height: 80px;
+    height: 55px;
 }
 
 .footText {
     position: relative;
-    top: 35px;
+    top: 20px;
     left: 20px;
     line-height: 30%;
-
 }
