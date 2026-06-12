@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import getProductsByCategory from '../../handlers/getProductsByCategory';
 
 function ProductsFilter({ onFilter }) {
     const [category, setCategory] = useState('');
