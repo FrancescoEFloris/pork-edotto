@@ -21,7 +21,7 @@ function Header() {
                     </div>
 
                     {/* NAVBAR: Allineata a sinistra con layout fluido dei NavItems */}
-                    <div className={`col-8 col-md-9 col-lg-9 py-4 ${styles.navPages}`}>
+                    <div className={`col-8 col-md-9 col-lg-9 py-1 ${styles.navPages}`}>
                         <ul className="row row-cols-2 row-cols-lg-4 list-unstyled m-0 p-0 text-center align-items-center">
                             <li>
                                 <NavLink
