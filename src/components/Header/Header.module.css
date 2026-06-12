@@ -15,15 +15,19 @@
     background-color: var(--golden);
 }
 
-.logoContainer {
-    padding-bottom: 10px;
-    justify-content: center;
+
+
+.imgContainer img {
+    position: relative;
+    left: 10px;
+    max-height: 190px;
+    min-height: 168px;
+    max-width: 255px;
 }
 
-.imgContainer {
-    width: 55%;
+.navPages { 
+    height: 150px;
 }
-.navPages { height: 150px; }
 
 .navPages li:hover {
     background-color: var(--golden);
