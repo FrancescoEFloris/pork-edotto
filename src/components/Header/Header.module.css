@@ -15,11 +15,14 @@
     background-color: var(--golden);
 }
 
-
+.imgContainer {
+    position: relative;
+}
 
 .imgContainer img {
-    position: relative;
-    left: 10px;
+    position: absolute;
+    left: 20px;
+    bottom: -110px;
     max-height: 190px;
     min-height: 168px;
     max-width: 255px;
@@ -32,4 +35,13 @@
 .navPages li:hover {
     background-color: var(--golden);
     transform: scale(105%);
+}
+
+@media (max-width: 991px) {
+    .header { max-height: 190px;}
+    .imgContainer img { left: 5px;}
+}
+
+@media (max-width: 614px) {
+    .imgContainer img { transform: scale(80%); left: -20px;}
 }

@@ -32,6 +32,10 @@ main {
     margin-bottom: 160px;
 }
 
+@media ( max-width: 991px ) {
+    main { border-top: none;}
+}
+
 a {
     color: black;
     text-decoration: none;
