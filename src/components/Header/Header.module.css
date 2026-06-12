@@ -7,17 +7,23 @@
     font-family: var(--font-title);
     background-color: rgb(255, 251, 219);
     z-index: 99;
+    max-height: 110px;
+}
+
+.headContainer {
+    height: 150px;
+    background-color: var(--golden);
 }
 
 .logoContainer {
     padding-bottom: 10px;
-    background-color: var(--golden);
     justify-content: center;
 }
 
 .imgContainer {
-    width: 90%;
+    width: 55%;
 }
+.navPages { height: 150px; }
 
 .navPages li:hover {
     background-color: var(--golden);
