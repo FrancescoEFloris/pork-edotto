@@ -1,4 +1,4 @@
-import RenderStars from "./handlers/RenderStar";
+import RenderStars from "../../handlers/RenderStar";
 
 
 function ReviewsListSingleProduct({ reviews }) {
