@@ -1,0 +1,17 @@
+.productCard {
+    width: 420px;
+    min-height: 420px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background-color: #fcfbf8;
+    /* Bianco carta/pergamena chiarissima */
+
+    /* Effetto doppia cornice in stile accademico */
+    border: 1px solid #1a1a1a;
+    outline: 1px solid #1a1a1a;
+    outline-offset: -6px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    /* Font tipografico classico */
+}
