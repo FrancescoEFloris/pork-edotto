@@ -1,4 +1,5 @@
 import styles from "./LastProducts.module.css";
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import getRecentDishes from "../../handlers/getRecentDishes";
 
@@ -21,7 +22,9 @@ function LastProducts() {
                     {dishes.length > 0 ? (
                         dishes.map((dish) => (
                             <div className={`${styles.carouselItem}`}>
-                                <img src={dish.image} alt={dish.name} />
+                                <Link to={`/products/${dish.id}`} >
+                                    <img src={dish.image} alt={dish.name} />
+                                </Link>
                                 <h3>{dish.name}</h3>
                                 <p>€ {dish.price}</p>
                             </div>

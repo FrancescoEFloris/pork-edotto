@@ -41,7 +41,6 @@ function ProductsList() {
 
     return (
         <main>
-            <Link to="/" className='navigateBtn'>Torna alla Home</Link>
             <div className="">
                 {products.length === 0 ? (
                     <p>Caricamento prodotti</p>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import getProduct from "../../handlers/product";
 import CardProduct from "./CardProduct";
 
@@ -23,8 +22,6 @@ function ProductDetail() {
     }, [id]);
     return (
         <div>
-            <Link to={`/products`} > Torna a tutti i prodotti </Link>
-            <Link to="/"> Torna alla Home </Link>
             <CardProduct product={product} />
         </div>
     );
