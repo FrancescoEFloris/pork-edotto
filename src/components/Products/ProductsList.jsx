@@ -1,26 +1,30 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ProductDetail from './ProductDetail.jsx';
 import styles from './ProductsList.module.css';
+import ProductsFilter from './ProductsFilter.jsx';
 import useFetch from '../../hooks/useFetch.js';
 
-
 function ProductsList() {
-    const { data: products, loading, error } = useFetch('/products');
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const endpoint = selectedCategory 
+        ? `/products?category=${selectedCategory}`
+        : '/products';
+    const { data: products, loading, error } = useFetch(endpoint);
 
+    function handleFilter(activeFilters) {
+        setSelectedCategory(activeFilters.category);
+    }
     if (error) return <p>Errore: {error}</p>;
-
-
+    
     if (loading || !products) {
         return <main><p>Caricamento prodotti...</p></main>;
     }
-    // console.log(products);
-    if (error) return <p>Errore: {error}</p>;
 
     return (
         <main>
             <div className="container">
+                <ProductsFilter onFilter={handleFilter} />
                 <div className="row row-cols-2">
-
                     {products.map((thisProduct) => (
                         <div key={thisProduct.id} className={`${styles.productCard}`}>
                             <h3>{thisProduct.name}</h3>
