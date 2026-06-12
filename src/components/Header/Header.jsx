@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styles from "./Header.module.css";
 
 function Header() {
@@ -22,17 +23,61 @@ function Header() {
                     {/* NAVBAR: Allineata a sinistra con layout fluido dei NavItems */}
                     <div className={`col-8 col-md-9 col-lg-9 py-4 ${styles.navPages}`}>
                         <ul className="row row-cols-2 row-cols-lg-4 list-unstyled m-0 p-0 text-center align-items-center">
-                            <li className="col nav-item mb-2 mb-lg-0">
-                                <a className="nav-link btn-primary d-inline-block" href="/">Home</a>
+                            <li>
+                                <NavLink
+                                    className={function (state) {
+                                        if (state.isActive) {
+                                            return 'nav-link d-inline-block active';
+                                        } else {
+                                            return 'nav-link d-inline-block';
+                                        }
+                                    }}
+                                    to="/"
+                                >
+                                    Home
+                                </NavLink>
                             </li>
                             <li className="col nav-item mb-2 mb-lg-0">
-                                <a className="nav-link d-inline-block" href="/products">Menù</a>
+                                <NavLink
+                                    className={function (state) {
+                                        if (state.isActive) {
+                                            return 'nav-link d-inline-block active';
+                                        } else {
+                                            return 'nav-link d-inline-block';
+                                        }
+                                    }}
+                                    to="/products"
+                                >
+                                    Menu
+                                </NavLink>
                             </li>
                             <li className="col nav-item mb-2 mb-lg-0">
-                                <a className="nav-link d-inline-block" href="/pippo">Peer-Reviews</a>
+                                <NavLink
+                                    className={function (state) {
+                                        if (state.isActive) {
+                                            return 'nav-link d-inline-block active';
+                                        } else {
+                                            return 'nav-link d-inline-block';
+                                        }
+                                    }}
+                                    to="/pippo"
+                                >
+                                    Peer-Reviews
+                                </NavLink>
                             </li>
                             <li className="col nav-item mb-2 mb-lg-0">
-                                <a className="nav-link d-inline-block" href="/aboutus">Chi siamo</a>
+                                <NavLink
+                                    className={function (state) {
+                                        if (state.isActive) {
+                                            return 'nav-link d-inline-block active';
+                                        } else {
+                                            return 'nav-link d-inline-block';
+                                        }
+                                    }}
+                                    to="/aboutus"
+                                >
+                                    Chi siamo
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
