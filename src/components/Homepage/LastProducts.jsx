@@ -1,20 +1,17 @@
 import styles from "./LastProducts.module.css";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import getRecentDishes from "../../handlers/getRecentDishes";
+import useFetch from "../../hooks/useFetch";
+
 
 function LastProducts() {
-    const [dishes, setDishes] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const currentDish = dishes[currentIndex];
 
-    useEffect(() => {
-        const fetchDishes = async () => {
-            const recentDishes = await getRecentDishes();
-            setDishes(recentDishes);
-        };
-        fetchDishes();
-    }, []);
+    const { data, loading, error } = useFetch('/products?sortBy=recent&limit=5')
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const dishes = data ?? [];
+
+    const currentDish = dishes[currentIndex];
 
     function nextDish() {
         setCurrentIndex((index) =>
@@ -27,11 +24,16 @@ function LastProducts() {
         );
     }
 
+    if (error) return <p>Errore nel caricamento: {error}</p>;
+
     return (
         <>
             <div className={`${styles.restaurantCard}`}>
                 <h2>Ultimi piatti</h2>
-                {dishes.length > 0 ? (
+
+                {loading ? (
+                    <p>Caricamento piatti recenti...</p>
+                ) : dishes.length > 0 && currentDish ? (
                     <div className={`${styles.carouselContainer}`}>
                         <button onClick={prevDish}> Prev </button>
                         <button onClick={nextDish}> Next </button>
@@ -41,12 +43,12 @@ function LastProducts() {
                                     <img src={currentDish.image} alt={currentDish.name} />
                                 </Link>
                                 <h3>{currentDish.name}</h3>
-                                <p>€ {currentDish.price}</p>
+                                <p>€ {currentDish.price.toFixed(2).replace('.', ',')}</p>
                             </div>
                         </div>
                     </div>
                 ) : (
-                    <p>Caricamento piatti recenti...</p>
+                    <p>Nessun piatto recente trovato.</p>
                 )}
             </div>
         </>

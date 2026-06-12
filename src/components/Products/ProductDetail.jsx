@@ -1,34 +1,29 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import getProduct from '../../handlers/product'
 import CardProduct from './CardProduct'
 import ReviewsListSingleProduct from "../Reviews/ReviewsListSingleProduct"
+import useFetch from '../../hooks/useFetch';
 
 
 function ProductDetail() {
 
     const { id } = useParams();
 
-    const [product, setProduct] = useState({});
+    const { data: product, loading, error } = useFetch(`/products/${id}`);
 
-    useEffect(() => {
+    if (loading) {
+        return <div className="container my-4">Caricamento del prodotto in corso...</div>;
+    }
 
-        getProduct(id)
-            .then(response => {
-                setProduct(response);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-    }, [id]);
+    if (error) {
+        return <div className="container my-4 text-danger">Errore: {error}</div>;
+    }
     return (
         <div>
             <CardProduct product={product} />
 
             <div className="container my-4">
-                <h3>Recensioni ({product.reviewsCount})</h3>
-                <ReviewsListSingleProduct reviews={product.reviews} />
+                <h3>Recensioni ({product.reviewsCount || 0})</h3>
+                <ReviewsListSingleProduct reviews={product?.reviews || []} />
             </div>
         </div>
     );
