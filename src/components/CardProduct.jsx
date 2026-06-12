@@ -6,8 +6,7 @@ function CardProduct({product}) {
         return <p>Caricamento prodotto...</p>;
     }
 
-    return 
-     (
+    return (
         <div className="container my-4">
             <div className="card">
 
@@ -38,18 +37,6 @@ function CardProduct({product}) {
                         <div className="col-12 col-md-6">
                             <strong>Origine:</strong>
                             <p className="mb-0">{product.place_of_origin}</p>
-                        </div>
-
-                        <div className="col-12 col-md-6">
-                            <strong>Disponibile:</strong>
-                            <p className="mb-0">
-                                {product.if_available ? "Sì" : "No"}
-                            </p>
-                        </div>
-
-                        <div className="col-12 col-md-6">
-                            <strong>ID:</strong>
-                            <p className="mb-0">{product.id}</p>
                         </div>
 
                     </div>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import getProduct from "../handlers/product";
+import CardProduct from "./CardProduct";
+import ReviewsListSingleProduct from "./ReviewsListSingleProduct";
 
 function ProductDetail() {
 
@@ -21,8 +23,12 @@ function ProductDetail() {
     }, [id]);
     return (
         <div>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
+            <CardProduct product={product} />
+
+            <div className="container my-4">
+                <h3>Recensioni ({product.reviewsCount})</h3>
+                <ReviewsListSingleProduct reviews={product.reviews} />
+            </div>
         </div>
     );
 }
