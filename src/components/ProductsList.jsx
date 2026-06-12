@@ -22,13 +22,7 @@ function ProductsList() {
     // console.log(products);
     if (error) return <p>Errore: {error}</p>;
 
-    return (
-        <main>
-            <div className="products-container">
-                <Link to="/">Torna alla Home</Link>
-                {products.length === 0 ? (
-                    <p>Caricamento prodotti</p>
-                ) : (
+const wrapper = (
                     <div className='products-wrapper'>
                         {products.map((thisProduct) => (
                             <div key={thisProduct.id} className="product-item">
@@ -40,7 +34,15 @@ function ProductsList() {
                             </div>
                         ))}
                     </div>
-                )}
+                );
+
+    return (
+        <main>
+            <div className="products-container">
+                <Link to="/">Torna alla Home</Link>
+                {products.length === 0 ? (
+                    <p>Caricamento prodotti</p>
+                ) : wrapper}
             </div>
         </main>
     );
