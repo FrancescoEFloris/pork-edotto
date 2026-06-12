@@ -1,30 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import fetchProducts from '../../handlers/fetchHandler.js';
-import ProductDetail from './ProductDetail.jsx';
+// Internal Imports:
 import styles from './ProductsList.module.css'
-
+import ProductDetail from './ProductDetail.jsx';
+import ProductsFilter from './ProductsFilter.jsx';
+import getProductsByCategory from '../../handlers/getProductsByCategory.js';
 
 function ProductsList() {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        async function loadData() {
-            try {
-                const dataResponse = await fetchProducts();
-                setProducts(dataResponse.data);
-            } catch (error) {
-                setError("Could not load the products");
-            }
+
+    async function loadProducts(category = '') {
+        try {
+            const data = await getProductsByCategory(category);
+            setProducts(data);
+        } catch (error) {
+            setError("Could not load the products");
         }
-        loadData();
+    }
+
+    useEffect(() => {
+        loadProducts();
     }, []);
-    // console.log(products);
+
+    function handleFilter(activeFilters) {
+        loadProducts(activeFilters.category);
+    }
+
     if (error) return <p>Errore: {error}</p>;
 
     const wrapper = (
         <div className="container">
+            <ProductsFilter onFilter={handleFilter} />
             <div className="row row-cols-2">
                 {products.map((thisProduct) => (
                     <div key={thisProduct.id} className={`${styles.productCard}`}>
