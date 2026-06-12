@@ -1,6 +1,35 @@
 .header {
     color: var(--title-color);
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 2px solid white;
+    font-size: xx-large;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    font-family: var(--font-title);
+    background-color: rgb(255, 251, 219);
+    z-index: 99;
+    max-height: 110px;
+}
+
+.headContainer {
+    height: 175px;
+    background-color: var(--golden);
+}
+
+
+
+.imgContainer img {
+    position: relative;
+    left: 10px;
+    max-height: 190px;
+    min-height: 168px;
+    max-width: 255px;
+}
+
+.navPages {
+    height: 150px;
+}
+
+.navPages li:hover {
+    background-color: var(--golden);
+    transform: scale(105%);
 }

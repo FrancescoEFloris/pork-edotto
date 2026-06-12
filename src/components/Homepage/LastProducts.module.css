@@ -1,0 +1,93 @@
+/* Contenitore principale: Stile Pergamena/Diploma */
+.restaurantCard {
+    width: 420px;
+    min-height: 420px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background-color: #fcfbf8;
+    /* Bianco carta/pergamena chiarissima */
+
+    /* Effetto doppia cornice in stile accademico */
+    border: 1px solid #1a1a1a;
+    outline: 1px solid #1a1a1a;
+    outline-offset: -6px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    /* Font tipografico classico */
+}
+
+/* Titolo: Autorevole e spaziato */
+.restaurantCard h2 {
+    text-align: center;
+    color: #1a1a1a;
+    /* Nero inchiostro */
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: normal;
+}
+
+
+/* Traccia del carosello */
+.carouselTrack {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+}
+
+/* Barra di scorrimento minimalista */
+.carouselTrack::-webkit-scrollbar {
+    height: 20px;
+}
+
+.carouselTrack::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.carouselTrack::-webkit-scrollbar-thumb {
+    background: #d4cfc5;
+}
+
+/* Singolo piatto: stile "polaroid" elegante o riquadro da documento */
+.carouselItem {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    background-color: #ffffff;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    /* Riquadro sottile per l'immagine */
+    text-align: center;
+}
+
+/* Immagine del piatto */
+.carouselItem img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+    filter: sepia(10%) contrast(105%);
+    /* Leggerissimo filtro per uniformare i toni */
+}
+
+/* Nome del piatto: Corsivo elegante */
+.carouselItem h3 {
+    margin: 15px 0 5px 0;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    color: #1a1a1a;
+}
+
+/* Prezzo: Discreto e coordinato col divisore */
+.carouselItem p {
+    margin: 0;
+    color: #bfa15f;
+    font-size: 15px;
+    letter-spacing: 1px;
+}

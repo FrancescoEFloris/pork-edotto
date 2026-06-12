@@ -4,6 +4,7 @@ import getProduct from "../handlers/product";
 import CardProduct from "./CardProduct";
 import ReviewsListSingleProduct from "../ReviewsListSingleProduct";
 
+
 function ProductDetail() {
 
     const { id } = useParams();
