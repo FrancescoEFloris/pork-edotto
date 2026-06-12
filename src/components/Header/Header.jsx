@@ -3,29 +3,42 @@ import styles from "./Header.module.css";
 function Header() {
     return (
         <header className={`${styles.header}`}>
+            <div className={`container-fluid py-2 ${styles.headContainer}`}>
+                <div className="row align-items-center">
 
-            <div className={`${styles.logoContainer}`}>
-                <h1>IL PORK - EDOTTO</h1>
-            </div>
-            <nav className="">
+                    {/* LOGO: Al lato (sinistra). Più grande su md/lg, leggermente ridotto in sm */}
+                    <div className="col-4 col-md-3 col-lg-3">
+                        <div className={`${styles.logoContainer}`}>
+                            <div className={`${styles.imgContainer}`}>
+                                <img
+                                    src="src\public\images\porkedotto-logo.png"
+                                    alt="Logo principale"
+                                    className="img-fluid"
+                                />
+                            </div>
+                        </div>
+                    </div>
 
-                <div className="container-fluid">
-                        <ul className="d-flex justify-content-around">
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Home</a>
+                    {/* NAVBAR: Allineata a sinistra con layout fluido dei NavItems */}
+                    <div className={`col-8 col-md-9 col-lg-9 ${styles.navPages}`}>
+                        <ul className="row row-cols-2 row-cols-lg-4 list-unstyled m-0 p-0 text-center align-items-center py-lg-5 py-sm-4">
+                            <li className="col nav-item mb-2 mb-lg-0">
+                                <a className="nav-link btn-primary d-inline-block" href="/">Home</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Menù</a>
+                            <li className="col nav-item mb-2 mb-lg-0">
+                                <a className="nav-link d-inline-block" href="/">Menù</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Peer-Reviews</a>
+                            <li className="col nav-item mb-2 mb-lg-0">
+                                <a className="nav-link d-inline-block" href="/">Peer-Reviews</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Chi siamo</a>
+                            <li className="col nav-item mb-2 mb-lg-0">
+                                <a className="nav-link d-inline-block" href="/">Chi siamo</a>
                             </li>
                         </ul>
+                    </div>
+
                 </div>
-            </nav>
+            </div>
         </header>
     );
 }

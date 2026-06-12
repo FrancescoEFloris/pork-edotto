@@ -1,12 +1,29 @@
 .header {
     color: var(--title-color);
-    font-size: larger;
-    text-align: center;
-    padding: 15px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid white;
+    font-size: xx-large;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    font-family: var(--font-title);
 }
 
 .logoContainer {
     padding-bottom: 10px;
+}
+
+.headContainer {
+    background: #F1ECE0;
+}
+
+.imgContainer {
+    width: 100%;
+}
+
+.navPages {
+    background-color: rgba(255, 255, 255, 0.405);
+}
+
+.navPages li:hover {
+    background-color: rgba(255, 255, 255, 0.637);
+    transform: scale(105%);
 }
