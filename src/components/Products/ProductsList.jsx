@@ -6,7 +6,7 @@ import useFetch from '../../hooks/useFetch.js';
 
 function ProductsList() {
     const [selectedCategory, setSelectedCategory] = useState('');
-    const endpoint = selectedCategory 
+    const endpoint = selectedCategory
         ? `/products?category=${selectedCategory}`
         : '/products';
     const { data: products, loading, error } = useFetch(endpoint);
@@ -15,30 +15,35 @@ function ProductsList() {
         setSelectedCategory(activeFilters.category);
     }
     if (error) return <p>Errore: {error}</p>;
-    
+
+    let contenutoProdotti;
+
     if (loading || !products) {
-        return <main><p>Caricamento prodotti...</p></main>;
+        contenutoProdotti = <p>Caricamento prodotti...</p>;
+    } else {
+        contenutoProdotti = products.map((thisProduct) => (
+            <div key={thisProduct.id} className={`${styles.productCard}`}>
+                <h3>{thisProduct.name}</h3>
+                <p>{thisProduct.description}</p>
+                <Link to={`/products/${thisProduct.id}`} >
+                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
+                </Link>
+            </div>
+        ));
     }
+
 
     return (
         <main>
             <div className="container">
                 <ProductsFilter onFilter={handleFilter} />
+
                 <div className="row row-cols-2">
-                    {products.map((thisProduct) => (
-                        <div key={thisProduct.id} className={`${styles.productCard}`}>
-                            <h3>{thisProduct.name}</h3>
-                            <p>{thisProduct.description}</p>
-                            <Link to={`/products/${thisProduct.id}`} >
-                                <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
-                            </Link>
-                        </div>
-                    ))}
+                    {contenutoProdotti}
                 </div>
             </div>
         </main>
     );
 }
-
 export default ProductsList;
 
