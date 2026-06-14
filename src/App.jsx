@@ -5,8 +5,8 @@ import AboutUs from "./components/Homepage/AboutUs";
 import ProductsList from "./components/Products/ProductsList";
 import Layout from "./components/Layout";
 import NotFound from './components/NotFound';
+import PageReview from "./components/Reviews/PageReview.jsx";
 // import styles from "./index.css";
-
 
 function App() {
   return (
@@ -16,12 +16,13 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="products" element={<ProductsList />} />
-            <Route path="aboutus" element={<AboutUs />}></Route>
+            <Route path="aboutus" element={<AboutUs />} />
             <Route path="products/:id" element={<ProductDetail />} />
+            <Route path="reviews" element={<PageReview />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-      </Routes>
-    </BrowserRouter >
+        </Routes>
+      </BrowserRouter >
 
     </>
   )

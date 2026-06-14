@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductsList.module.css';
 import ProductsFilter from './ProductsFilter.jsx';
@@ -9,18 +9,23 @@ function ProductsList() {
     const endpoint = selectedCategory
         ? `/products?category=${selectedCategory}`
         : '/products';
-    const { data: products, loading, error } = useFetch(endpoint);
 
+    const { data: products, loading, error } = useFetch(endpoint);
     function handleFilter(activeFilters) {
         setSelectedCategory(activeFilters.category);
     }
     if (error) return <p>Errore: {error}</p>;
-
     if (loading || !products) {
-        return <main><p>Caricamento prodotti...</p></main>;
+        return (
+            <main>
+                <div className="container">
+                    <ProductsFilter onFilter={handleFilter} />
+                    <p className="text-center mt-4">Caricamento prodotti...</p>
+                </div>
+            </main>
+        );
     }
-
-    return (
+  
         <main>
             <div className="container">
                 <h1>Sperimentazioni Gastronomiche</h1>
@@ -59,4 +64,5 @@ function ProductsList() {
 }
 
 export default ProductsList;
+
 
