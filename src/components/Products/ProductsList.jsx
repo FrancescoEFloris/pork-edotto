@@ -63,7 +63,7 @@ function ProductsList() {
                                 <h3>{thisProduct.name}</h3>
                                 <p>{thisProduct.description}</p>
                                 <Link to={`/products/${thisProduct.id}`} >
-                                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
+                                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img img-fluid w-100' />
                                 </Link>
                             </div>
                         ))}
