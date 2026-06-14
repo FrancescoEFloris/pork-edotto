@@ -5,7 +5,7 @@
     top: 0;
     width: 100%;
     font-family: var(--font-title);
-    background-color: #0b2e33;
+    background-color: var(--bg-second-color);
     z-index: 99;
     padding: 0.5rem 0;
 }
@@ -34,9 +34,6 @@
     transition: transform 0.3s ease;
 }
 
-
-
-
 /* Sopra i 15p */
 .navDesktop {
     display: flex;
@@ -55,7 +52,6 @@
 
     transform: scale(105%);
 }
-
 
 .hamburger {
     display: none;
@@ -87,7 +83,6 @@
         z-index: 1000;
         padding: 0;
         margin-left: auto;
-
     }
 
     .hamburger .bar {
@@ -117,9 +112,9 @@
         flex-direction: column;
         position: absolute;
         top: 100%;
-        left: 0;
+        left: 1.5%;
         width: 100%;
-        background-color: #bbe3e9;
+        background-color: var(--bg-color);
         padding: 1.5rem 0;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         z-index: 999;
