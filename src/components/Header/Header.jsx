@@ -26,11 +26,10 @@ function Header() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 col-xl-9 d-flex justify-content-end justify-content-xl-start align-items-center">
+                    <div className="col-6 col-xl-9 d-flex justify-content-center align-items-center">
                         <ul className={`list-unstyled m-0 p-0 text-center align-items-center ${styles.navDesktop}`}>
                             <li><NavLink className={getNavLinkClass} to="/">Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products">Menu</NavLink></li>
-                            <li><NavLink className={getNavLinkClass} to="/pippo">Peer-Reviews</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus">Chi siamo</NavLink></li>
                         </ul>
                         <button
@@ -45,7 +44,6 @@ function Header() {
                         <ul className={`${styles.navMobile} ${isOpen ? styles.active : ''} list-unstyled m-0 p-0 text-center`}>
                             <li><NavLink className={getNavLinkClass} to="/" onClick={toggleMenu}>Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products" onClick={toggleMenu}>Menu</NavLink></li>
-                            <li><NavLink className={getNavLinkClass} to="/pippo" onClick={toggleMenu}>Peer-Reviews</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus" onClick={toggleMenu}>Chi siamo</NavLink></li>
                         </ul>
                     </div>

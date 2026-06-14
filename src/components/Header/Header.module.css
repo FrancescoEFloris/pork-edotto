@@ -38,7 +38,6 @@
 .navDesktop {
     display: flex;
     gap: 2.5rem;
-    justify-content: flex-end;
 }
 
 .navDesktop li {
