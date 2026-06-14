@@ -6,7 +6,7 @@ import ProductsList from "./components/Products/ProductsList";
 import Layout from "./components/Layout";
 import NotFound from './components/NotFound';
 // import styles from "./index.css";
-
+import PageReview from "./components/Reviews/PageReview.jsx";
 
 function App() {
   return (
