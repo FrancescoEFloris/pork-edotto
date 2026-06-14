@@ -8,11 +8,19 @@
     background-color: var(--bg-second-color);
     z-index: 99;
     padding: 0.5rem 0;
+    max-height: 90px;
 }
 
 .headContainer {
     background-color: var(--blue);
     padding: 10px 0;
+}
+
+.redbar {
+    height: 20px;
+    background-color: var(--red);
+    position: sticky;
+    top: 90px;
 }
 
 
@@ -23,12 +31,13 @@
 
 .imgContainer {
     position: relative;
+    top: -20px;
     display: flex;
     align-items: center;
 }
 
 .imgContainer img {
-    max-height: 110px;
+    max-height: 180px;
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -62,7 +71,7 @@
 
 
 /* --- sotto i 15p --- */
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
 
 
     .navDesktop {
