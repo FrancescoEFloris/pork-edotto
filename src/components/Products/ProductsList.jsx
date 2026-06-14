@@ -47,7 +47,7 @@ function ProductsList() {
                 />
                 {selectedCategory === 'vegana' ? (
                     <div className="alert text-center mt-4">
-                        <img src="./imgs/maiale_anti_vegani.png" alt="maialino anti-vegani" />
+                        <img src="/images/maiale_anti_vegani.png" alt="maialino anti-vegani" />
                         <h3>Sezione Vegana in Porchetteria? Fa già ridere così</h3>
                         <p>Apprezziamo il coraggio! Ma qui dentro l'unica cosa "vegana" che troverai è il rosmarino sulla porchetta. Dai un'occhiata alle nostre delizie tradizionali, non te ne pentirai!</p>
                     </div>

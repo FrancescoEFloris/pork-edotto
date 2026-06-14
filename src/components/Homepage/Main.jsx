@@ -6,7 +6,7 @@ const heroBannerSection = <>
     <section className={`${styles.heroBanner}`}>
 
         <picture>
-            <img src="src\public\images\hero-banner.jpg" alt="La Scienza della Porchetta - Esperimenti di Gusto" className={`${styles.heroImage}`} />
+            <img src="\images\hero-banner.jpg" alt="La Scienza della Porchetta - Esperimenti di Gusto" className={`${styles.heroImage}`} />
         </picture>
         <div className={`${styles.heroContent}`}>
         </div>
