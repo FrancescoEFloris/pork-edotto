@@ -1,0 +1,7 @@
+.panino {
+    background-image: url('./imgs/rev-img/sfondo generico.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+}

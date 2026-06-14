@@ -5,8 +5,8 @@ import AboutUs from "./components/Homepage/AboutUs";
 import ProductsList from "./components/Products/ProductsList";
 import Layout from "./components/Layout";
 import NotFound from './components/NotFound';
-// import styles from "./index.css";
 import PageReview from "./components/Reviews/PageReview.jsx";
+// import styles from "./index.css";
 
 function App() {
   return (
