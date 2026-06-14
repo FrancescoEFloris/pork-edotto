@@ -31,7 +31,7 @@ function Header() {
                             <li><NavLink className={getNavLinkClass} to="/">Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products">Menu</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus">Chi siamo</NavLink></li>
-                            <li><NavLink className={getNavLinkClass} to="/reviews">Review</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/reviews">I Nostri Top</NavLink></li>
                         </ul>
                         <button
                             className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
@@ -46,7 +46,7 @@ function Header() {
                             <li><NavLink className={getNavLinkClass} to="/" onClick={toggleMenu}>Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products" onClick={toggleMenu}>Menu</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus" onClick={toggleMenu}>Chi siamo</NavLink></li>
-                            <li><NavLink className={getNavLinkClass} to="/reviews" onClick={toggleMenu}>Review</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/reviews" onClick={toggleMenu}>I nostri top</NavLink></li>
                         </ul>
                     </div>
                 </div>
