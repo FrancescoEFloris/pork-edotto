@@ -4,18 +4,26 @@
 /* VARIABILI CSS */
 
 :root {
-    --bg-color: #00065e;
-    --surface-color: #656d77;
-    --red: #bbe3e9;
-    --blue: #93B1B5;
-    ;
-    --title-color: #000000;
-    --text-color: #d69a9a;
+    /* Main Palette */
+    --bg-color: #FFF7E6;
+    --bg-second-color: #ece1b4;
+    --foot-color: #4B2E20;
+    --red: #7a1e1e;
+    --green: #6E8B59;
+    --orange: #D99A34;
+    /* Text */
+    --title-color: #230000;
+    --text-color: #fef6e4;
     --font-display: 'IM Fell DW Pica', serif;
     --font-title: "Bowlby One", serif;
 }
 
 /* GENERALI */
+
+
+body {
+    background-color: var(--bg-color);
+}
 
 font body {
     background: var(--bg-color);
@@ -24,8 +32,7 @@ font body {
 }
 
 main {
-
-    padding-top: 35px;
+    padding-top: 75px;
     padding-left: 20px;
     margin-bottom: 16px;
 }
