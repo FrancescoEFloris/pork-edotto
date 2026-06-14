@@ -18,14 +18,14 @@ function ProductDetail() {
         return <div className="container my-4 text-danger">Errore: {error}</div>;
     }
     return (
-        <div>
+        <main>
             <CardProduct product={product} />
 
             <div className="container my-4">
                 <h3>Recensioni ({product.reviewsCount || 0})</h3>
                 <ReviewsListSingleProduct reviews={product?.reviews || []} />
             </div>
-        </div>
+        </main>
     );
 }
 
