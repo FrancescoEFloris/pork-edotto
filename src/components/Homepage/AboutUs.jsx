@@ -17,7 +17,7 @@ function AboutUs() {
             <section className={`row align-items-center mb-5 ${styles.storySection}`}>
                 <div className="col-md-6">
                     <img
-                        src="../../../imgs/team.png"
+                        src="/images/team.png"
                         alt="Pork-edotto team"
                         className={styles.storyImage}
                     />

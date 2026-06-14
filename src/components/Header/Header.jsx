@@ -19,7 +19,7 @@ function Header() {
                         <div className={`${styles.logoContainer}`}>
                             <div className={`${styles.imgContainer}`}>
                                 <img
-                                    src="src\public\images\porkedotto-logo.png"
+                                    src="\images\porkedotto-logo.png"
                                     alt="Logo principale"
                                     className="img-fluid"
                                 />
