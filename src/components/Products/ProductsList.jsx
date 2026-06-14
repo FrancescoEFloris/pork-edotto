@@ -23,7 +23,11 @@ function ProductsList() {
     return (
         <main>
             <div className="container">
-                <ProductsFilter onFilter={handleFilter} />
+                <h1>Sperimentazioni Gastronomiche</h1>
+                <h5>Cerca il tuo Pork-odotto:</h5>
+                <ProductsFilter
+                    onFilter={handleFilter}
+                    currentCategory={selectedCategory} />
                 {selectedCategory === 'vegana' ? (
                     <div className="alert text-center mt-4">
                         <img src="./imgs/maiale_anti_vegani.png" alt="maialino anti-vegani" />

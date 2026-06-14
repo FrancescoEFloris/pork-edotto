@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function ProductsFilter({ onFilter }) {
-    const [category, setCategory] = useState('');
+function ProductsFilter({ onFilter, currentCategory }) {
+    const [category, setCategory] = useState(currentCategory || '');
+
+    useEffect(() => {
+        setCategory(currentCategory || '');
+    }, [currentCategory]);
 
     function submitHandler(event) {
         event.preventDefault();
@@ -21,8 +25,8 @@ function ProductsFilter({ onFilter }) {
 
     return (
         <form onSubmit={submitHandler}>
-            <label>Categorie </label>
-            <select value={category} onChange={categoryHandler}>
+            <label htmlFor="categories">Categorie</label>
+            <select value={category} onChange={categoryHandler} id='categories'>
                 <option value="">Tutte</option>
                 <option value="drink">Drink</option>
                 <option value="piatto">Piatto</option>
