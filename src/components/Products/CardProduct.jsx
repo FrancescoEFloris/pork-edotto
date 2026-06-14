@@ -19,7 +19,7 @@ function CardProduct({ product }) {
                 <div className="card-body">
 
                     <div className="text-center mb-4">
-                        <img src={product.image} alt={product.name} className="img-fluid rounded"
+                        <img src={`/images/${product.image}`} alt={product.name} className="img-fluid rounded"
                             style={{ maxHeight: "500px", objectFit: "cover" }}
                         />
                     </div>
