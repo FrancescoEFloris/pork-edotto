@@ -32,7 +32,7 @@ function PageReview() {
                                             className={`${styles.foodImg} img-fluid my-2`}
                                         />
                                         < div className="mb-2 text-warning fs-4 d-flex justify-content-center align-items-center">
-                                            {RenderStars(Math.round(podiumProducts[0].average_rating || 0))}
+                                            {RenderStars(podiumProducts[0].average_rating || 0)}
                                             <span className="text-muted fs-6 fw-semibold ps-2">
                                                 {`(${Number(podiumProducts[0].average_rating || 0).toFixed(1)})`}
                                             </span>
@@ -64,7 +64,7 @@ function PageReview() {
                                                 className={`${styles.foodImg} img-fluid my-2`}
                                             />
                                             <div className="mb-2 text-warning fs-4 d-flex justify-content-center align-items-center">
-                                                {RenderStars(Math.round(product.average_rating || 0))}
+                                                {RenderStars(product.average_rating || 0)}
                                                 <span className="text-muted fs-6 fw-semibold ps-2">
                                                     {`(${Number(product.average_rating || 0).toFixed(1)})`}
                                                 </span>
@@ -98,7 +98,7 @@ function PageReview() {
                                                     <td className="fw-semibold">{product.name}</td>
                                                     <td className="text-warning d-flex align-items-center gap-2">
                                                         <div className="d-flex">
-                                                            {RenderStars(Math.round(product.average_rating || 0))}
+                                                            {RenderStars(product.average_rating || 0)}
                                                         </div>
                                                         <span className="text-muted fs-6 fw-semibold">
                                                             {`(${Number(product.average_rating || 0).toFixed(1)})`}
