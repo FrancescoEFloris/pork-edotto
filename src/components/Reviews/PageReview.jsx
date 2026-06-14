@@ -1,6 +1,7 @@
 
 import styles from './StyleReview.module.css';
 import useFetch from '../../hooks/useFetch';
+import RenderStars from './RenderStar';
 
 function PageReview() {
     const { data, loading, error } = useFetch('/products?sortBy=rating&&limit=10');
@@ -30,8 +31,11 @@ function PageReview() {
                                             alt={podiumProducts[0].name}
                                             className={`${styles.foodImg} img-fluid my-2`}
                                         />
-                                        <div className="mb-2 text-warning fs-4">
-                                            {"⭐".repeat(Math.round(podiumProducts[0].average_rating || 0))}
+                                        < div className="mb-2 text-warning fs-4 d-flex justify-content-center align-items-center">
+                                            {RenderStars(Math.round(podiumProducts[0].average_rating || 0))}
+                                            <span className="text-muted fs-6 fw-semibold ps-2">
+                                                {`(${Number(podiumProducts[0].average_rating || 0).toFixed(1)})`}
+                                            </span>
                                         </div>
                                         <h5 className="card-title fw-bold">{podiumProducts[0].name}</h5>
                                         <p className="card-text text-muted">{podiumProducts[0].description}</p>
@@ -59,8 +63,11 @@ function PageReview() {
                                                 alt={product.name}
                                                 className={`${styles.foodImg} img-fluid my-2`}
                                             />
-                                            <div className="mb-2 text-warning fs-5">
-                                                {"⭐".repeat(Math.round(product.average_rating || 0))}
+                                            <div className="mb-2 text-warning fs-4 d-flex justify-content-center align-items-center">
+                                                {RenderStars(Math.round(product.average_rating || 0))}
+                                                <span className="text-muted fs-6 fw-semibold ps-2">
+                                                    {`(${Number(product.average_rating || 0).toFixed(1)})`}
+                                                </span>
                                             </div>
                                             <h5 className="card-title fw-bold">{product.name}</h5>
                                             <p className="card-text text-muted">{product.description}</p>
@@ -89,8 +96,13 @@ function PageReview() {
                                                 <tr key={product.id}>
                                                     <th scope="row" className="fw-bold">#{index + 4}</th>
                                                     <td className="fw-semibold">{product.name}</td>
-                                                    <td className="text-warning">
-                                                        {"⭐".repeat(Math.round(product.average_rating || 0))}
+                                                    <td className="text-warning d-flex align-items-center gap-2">
+                                                        <div className="d-flex">
+                                                            {RenderStars(Math.round(product.average_rating || 0))}
+                                                        </div>
+                                                        <span className="text-muted fs-6 fw-semibold">
+                                                            {`(${Number(product.average_rating || 0).toFixed(1)})`}
+                                                        </span>
                                                     </td>
                                                     <td className="text-muted">{product.description}</td>
                                                 </tr>
@@ -103,7 +115,7 @@ function PageReview() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 export default PageReview;
