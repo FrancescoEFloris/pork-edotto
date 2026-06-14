@@ -1,5 +1,6 @@
 import LastProducts from './LastProducts.jsx';
 import styles from './Main.module.css';
+import PorkInstein from '../PorkInstein.jsx';
 
 
 const heroBannerSection = <>
@@ -23,6 +24,7 @@ function Main() {
             <main>
 
                 <LastProducts />
+                <PorkInstein />
             </main>
         </>
     );

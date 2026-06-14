@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { apiFetch } from '../utils/DB_utilities';
 
-function useAI(endpoint) {
+function useAi(endpoint) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -27,3 +27,5 @@ function useAI(endpoint) {
 
     return { sendMessage, data, loading, error };
 }
+
+export default useAi;
