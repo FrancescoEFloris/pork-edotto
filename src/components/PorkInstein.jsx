@@ -25,7 +25,7 @@ export function PorkInstein() {
                         <input
                             type="text"
                             value={userMessage}
-                            onChange={(event) => setUserMessage(eevent.target.value)}
+                            onChange={(event) => setUserMessage(event.target.value)}
                             placeholder="Chiedi pure..."
                             disabled={loading}
                         />
