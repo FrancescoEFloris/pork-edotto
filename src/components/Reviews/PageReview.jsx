@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from "./StyleReview.module.css";
+import styles from './StyleReview.module.css';
 
 export default function PageReview() {
     return (
         <div className={styles.container + " my-4"}>
-
             <div className={styles.podiumSection + " p-4 rounded mb-5"}>
                 <h2 className={styles.podiumTitle + " text-center text-white mb-4"}>The best science sandwich👑</h2>
                 <div className="row justify-content-center mb-4">
@@ -24,3 +23,4 @@ export default function PageReview() {
         </div>
     );
 }
+export default PageReview;

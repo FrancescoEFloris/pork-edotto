@@ -18,10 +18,11 @@ function App() {
             <Route path="products" element={<ProductsList />} />
             <Route path="aboutus" element={<AboutUs />}></Route>
             <Route path="products/:id" element={<ProductDetail />} />
+            <Route path="reviews" element={<PageReview />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-      </Routes>
-    </BrowserRouter >
+        </Routes>
+      </BrowserRouter >
 
     </>
   )
