@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 function ProductsFilter({ onFilter, currentCategory }) {
     const [category, setCategory] = useState(currentCategory || '');
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         setCategory(currentCategory || '');
@@ -11,37 +12,82 @@ function ProductsFilter({ onFilter, currentCategory }) {
         event.preventDefault();
 
         const activeFilters = {
-            category: category
+            category: category,
+            search: search
         };
 
         if (onFilter) {
             onFilter(activeFilters);
         }
     }
+
     function categoryHandler(event) {
         setCategory(event.target.value);
     }
 
+    function searchHandler(event) {
+        setSearch(event.target.value);
+    }
 
     return (
-        <form onSubmit={submitHandler}>
-            <label htmlFor="categories">Categorie</label>
-            <select value={category} onChange={categoryHandler} id='categories'>
-                <option value="">Tutte</option>
-                <option value="drink">Drink</option>
-                <option value="piatto">Piatto</option>
-                <option value="contorno">Contorno</option>
-                <option value="vegana">Vegana</option>
-                <option value="digitale">Digitale</option>
-                <option value="parallela">Parallela</option>
-                <option value="chimica">Chimica</option>
-                <option value="fisica quantistica">Fisica Quantistica</option>
-                <option value="biologia">Biologia</option>
-                <option value="astronomia">Astronomia</option>
-                <option value="matematica">Matematica</option>
-                <option value="paleontologia">Paleontologia</option>
-            </select>
-            <button type="submit">Cerca</button>
+        <form
+            onSubmit={submitHandler}
+            className="row g-3 align-items-end rounded bg-white p-1 mt-3"
+        >
+            <div className="col-12 col-md-4">
+                <label
+                    htmlFor="search-input"
+                    className="form-label fw-bold"
+                >
+                    Cerca per nome
+                </label>
+                <input
+                    type="text"
+                    id="search-input"
+                    value={search}
+                    onChange={searchHandler}
+                    placeholder="Nome del piatto..."
+                    className="form-control"
+                />
+            </div>
+
+            <div className="col-12 col-md-4">
+                <label
+                    htmlFor="categories"
+                    className="form-label fw-bold"
+                >
+                    Categorie
+                </label>
+                <select
+                    value={category}
+                    onChange={categoryHandler}
+                    id="categories"
+                    className="form-select"
+                >
+                    <option value="">Tutte</option>
+                    <option value="drink">Drink</option>
+                    <option value="piatto">Piatto</option>
+                    <option value="contorno">Contorno</option>
+                    <option value="vegana">Vegana</option>
+                    <option value="digitale">Digitale</option>
+                    <option value="parallela">Parallela</option>
+                    <option value="chimica">Chimica</option>
+                    <option value="fisica quantistica">Fisica Quantistica</option>
+                    <option value="biologia">Biologia</option>
+                    <option value="astronomia">Astronomia</option>
+                    <option value="matematica">Matematica</option>
+                    <option value="paleontologia">Paleontologia</option>
+                </select>
+            </div>
+
+            <div className="col-12 col-md-3">
+                <button
+                    type="submit"
+                    className="btn btn-warning text-white fw-bold"
+                >
+                    Cerca
+                </button>
+            </div>
         </form>
     );
 }

@@ -6,33 +6,45 @@ import useFetch from '../../hooks/useFetch.js';
 
 function ProductsList() {
     const [selectedCategory, setSelectedCategory] = useState('');
-    const endpoint = selectedCategory
-        ? `/products?category=${selectedCategory}`
-        : '/products';
+    const [searchQuery, setSearchQuery] = useState('');
+
+
+    const endpoint = `/products?category=${selectedCategory}&search=${searchQuery}`;
 
     const { data: products, loading, error } = useFetch(endpoint);
+
     function handleFilter(activeFilters) {
         setSelectedCategory(activeFilters.category);
+        setSearchQuery(activeFilters.search);
     }
+
     if (error) return <p>Errore: {error}</p>;
+
     if (loading || !products) {
         return (
             <main>
                 <div className="container">
-                    <ProductsFilter onFilter={handleFilter} />
+                    <ProductsFilter
+                        onFilter={handleFilter}
+                        currentCategory={selectedCategory}
+                    />
                     <p className="text-center mt-4">Caricamento prodotti...</p>
                 </div>
             </main>
         );
     }
-  
+
+    return (
         <main>
             <div className="container">
-                <h1>Sperimentazioni Gastronomiche</h1>
-                <h5>Cerca il tuo Pork-odotto:</h5>
+                <div className='mb-3'>
+                    <h1>Sperimentazioni Gastronomiche</h1>
+                    <h5>Cerca il tuo Pork-odotto:</h5>
+                </div>
                 <ProductsFilter
                     onFilter={handleFilter}
-                    currentCategory={selectedCategory} />
+                    currentCategory={selectedCategory}
+                />
                 {selectedCategory === 'vegana' ? (
                     <div className="alert text-center mt-4">
                         <img src="./imgs/maiale_anti_vegani.png" alt="maialino anti-vegani" />
@@ -42,7 +54,7 @@ function ProductsList() {
                 ) : products.length === 0 ? (
                     <div className="alert alert-warning text-center mt-4">
                         <h3>Nessun prodotto trovato</h3>
-                        <p>Non ci sono prodotti disponibili per la categoria selezionata.</p>
+                        <p>Non ci sono prodotti disponibili per i filtri selezionati.</p>
                     </div>
                 ) : (
                     <div className="row row-cols-2">
@@ -56,13 +68,10 @@ function ProductsList() {
                             </div>
                         ))}
                     </div>
-                )
-                }
+                )}
             </div>
         </main>
     );
 }
 
 export default ProductsList;
-
-
