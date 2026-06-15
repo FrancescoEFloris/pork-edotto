@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import styles from './StyleReview.module.css';
 import useFetch from '../../hooks/useFetch';
 import RenderStars from './RenderStar';
@@ -27,11 +27,14 @@ function PageReview() {
                                     <div className={`${styles.revCard} card gold-border text-center shadow`}>
                                         <div className="card-body">
                                             <span className={`${styles.badge} badge bg-warning text-dark mb-2`}>1° Posto</span>
-                                            <img
-                                                src={podiumProducts[0].image}
-                                                alt={podiumProducts[0].name}
-                                                className={`${styles.foodImg} img-fluid my-2`}
-                                            />
+                                            <Link
+                                                to={`/products/${podiumProducts[0].id}`}>
+                                                <img
+                                                    src={podiumProducts[0].image}
+                                                    alt={podiumProducts[0].name}
+                                                    className={`${styles.foodImg} img-fluid my-2`}
+                                                />
+                                            </Link>
                                             < div className="mb-2 text-warning fs-4 d-flex justify-content-center align-items-center">
                                                 {RenderStars(podiumProducts[0].average_rating || 0)}
                                                 <span className="text-muted fs-6 fw-semibold ps-2">
@@ -59,11 +62,14 @@ function PageReview() {
                                                 <span className={`${styles.badge} badge ${badgeBg} text-white mb-2`}>
                                                     {label}
                                                 </span>
-                                                <img
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    className={`${styles.foodImg} img-fluid my-2`}
-                                                />
+                                                <Link
+                                                    to={`/products/${product.id}`}>
+                                                    <img
+                                                        src={product.image}
+                                                        alt={product.name}
+                                                        className={`${styles.foodImg} img-fluid my-2`}
+                                                    />
+                                                </Link>
                                                 <div className="mb-2 text-warning fs-4 d-flex justify-content-center align-items-center">
                                                     {RenderStars(product.average_rating || 0)}
                                                     <span className="text-muted fs-6 fw-semibold ps-2">
@@ -96,7 +102,12 @@ function PageReview() {
                                                 {otherProducts.map((product, index) => (
                                                     <tr key={product.id}>
                                                         <th scope="row" className="fw-bold">#{index + 4}</th>
-                                                        <td className="fw-semibold">{product.name}</td>
+                                                        <td className="fw-semibold">
+                                                            <Link
+                                                                to={`/products/${product.id}`}>
+                                                                {product.name}
+                                                            </Link>
+                                                        </td>
                                                         <td className="text-warning d-flex align-items-center gap-2">
                                                             <div className="d-flex">
                                                                 {RenderStars(product.average_rating || 0)}
@@ -121,11 +132,3 @@ function PageReview() {
     );
 }
 export default PageReview;
-
-
-
-
-
-
-
-
