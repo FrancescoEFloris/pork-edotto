@@ -60,7 +60,7 @@ function DishCarousel({ title, endpoint }) {
                 <p>Caricamento {title.toLowerCase()}...</p>
             ) : dishes.length > 0 && currentDish ? (
                 <div className={styles.carouselContainer}>
-                    <div className={`${styles.restaurantCard}`}>
+                    <div className={`${styles.restaurantCard} ${styles.sideCard}`}>
                         <div className={styles.carouselTrack}>
                             <DishCard dish={leftDish} />
                         </div>
@@ -70,7 +70,7 @@ function DishCarousel({ title, endpoint }) {
                             <DishCard dish={currentDish} />
                         </div>
                     </div>
-                    <div className={styles.restaurantCard}>
+                    <div className={`${styles.restaurantCard} ${styles.sideCard}`}>
                         <div className={styles.carouselTrack}>
                             <DishCard dish={rightDish} />
                         </div>
