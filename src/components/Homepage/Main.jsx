@@ -1,8 +1,6 @@
-import LastProducts from './LastProducts.jsx';
 import styles from './Main.module.css';
 import PorkInstein from '../PorkInstein.jsx';
-import RandomProducts from '../Products/RandomProducts.jsx';
-
+import DishCarousel from '../Products/DishCarousel.jsx';
 
 const heroBannerSection = <>
     <section className={`${styles.heroBanner}`}>
@@ -27,9 +25,20 @@ function Main() {
             {heroBannerSection}
             <main>
                 <div className='d-flex flex-wrap'>
-                    <RandomProducts title="In evidenza" />
-                    <LastProducts />
-                    <RandomProducts title="Dal professore" />
+                    <DishCarousel
+                        title="In evidenza"
+                        endpoint="/products?sortBy=rating&limit=5"
+                    />
+
+                    <DishCarousel
+                        title="Ultimi piatti"
+                        endpoint="/products?sortBy=recent&limit=5"
+                    />
+
+                    <DishCarousel
+                        title="Dal Professore"
+                        endpoint="/products?category=Chimica&limit=5"
+                    />
                 </div>
                 <PorkInstein />
             </main>

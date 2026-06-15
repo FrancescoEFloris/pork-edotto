@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { apiFetch } from '../utils/DB_utilities';
 
-export function useFetch(endpoint) {
+function useFetch(endpoint) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
