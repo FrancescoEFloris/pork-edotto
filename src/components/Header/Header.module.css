@@ -70,6 +70,15 @@
     display: none;
 }
 
+.navDesktop li:has(a.active) {
+    background-color: rgb(255, 255, 255);
+    transform: scale(105%);
+}
+
+.navDesktop a.active {
+    color: var(--blue) !important;
+    font-weight: bold;
+}
 
 /* --- sotto i 15p --- */
 @media (max-width: 1200px) {

@@ -3,14 +3,13 @@ import { NavLink } from 'react-router-dom';
 import styles from "./Header.module.css";
 
 function Header() {
-
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
     const getNavLinkClass = ({ isActive }) =>
-        `nav-link d-inline-block ${isActive ? 'active' : ''}`;
+        `nav-link d-inline-block ${isActive ? styles.active : ''}`;
     return (<>
         <header className={`${styles.header}`}>
             <div className={`container-fluid ${styles.headContainer}`}>
@@ -27,7 +26,7 @@ function Header() {
                         </div>
                     </div>
                     <div className="col-6 col-xl-9 d-flex justify-content-center align-items-start">
-                        <ul className={`list-unstyled m-0 p-0 text-center align-items-center ${styles.navDesktop}`}>
+                        <ul className={`list-unstyled m-0 p-0 text-center align-items-center ${styles.navDesktop} `}>
                             <li><NavLink className={getNavLinkClass} to="/">Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products">Menu</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus">Chi siamo</NavLink></li>
