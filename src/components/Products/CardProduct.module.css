@@ -1,0 +1,45 @@
+.customCard {
+    background-color: #d89a36;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.productImage {
+    width: 85%;
+    max-width: 350px;
+    border-radius: 15px;
+    object-fit: cover;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.titleO {
+    color:#6e2c00;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--font-display);
+}
+
+.description {
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.descriptionTitle {
+    color: #6e2c00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff8d6;
+    background-color: #6e2c00;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+}
+
