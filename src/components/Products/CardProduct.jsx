@@ -1,4 +1,4 @@
-import styles from "./ProductsList.module.css"
+import styles from './CardProduct.module.css';
 
 function CardProduct({ product }) {
 
@@ -16,31 +16,43 @@ function CardProduct({ product }) {
                     <h2 className="mb-0">{product.name}</h2>
                 </div>
 
-                <div className="card-body">
+                <div className="row g-0">
 
-                    <div className="text-center mb-4">
-                        <img src={product.image} alt={product.name} className="img-fluid rounded"
-                            style={{ maxHeight: "500px", objectFit: "cover" }}
-                        />
+                    <div className="text-center mb-4 col-md-5">
+                        <img src={product.image} alt={product.name} className={`${styles.productImage} img-fluid h-100`} />
                     </div>
 
-                    <div className="row g-3">
+                    <div className="col-md-7">
+                        <div className="card-body h-100 d-flex flex-column">
+                            
+                            <h7 className={styles.descriptionTitle}>
+                                <i className="bi bi-clipboard2-pulse me-2"></i>
+                                Scheda tecnica
+                            </h7>
+                            <p className={styles.description}>
+                                {product.description}
+                            </p>
 
-                        <div className="col-12">
-                            <strong>Descrizione:</strong>
-                            <p className="mb-0">{product.description}</p>
+                            <div className="mb-3">
+                                <h7  className={styles.descriptionTitle}>
+                                    🧪 Laboratorio: 
+                                </h7>
+                                 <p className={styles.description}>
+                                {product.place_of_origin}
+                            </p>
+                            </div>
+
+                            <div className="mt-auto">
+
+                                <div className="mb-3">
+                                    <span className={styles.price}>
+                                        € {formattedPrice}
+                                    </span>
+                                </div>
+
+
+                            </div>
                         </div>
-
-                        <div className="col-12 col-md-6">
-                            <strong>Prezzo:</strong>
-                            <p className="mb-0">€ {formattedPrice}</p>
-                        </div>
-
-                        <div className="col-12 col-md-6">
-                            <strong>Origine:</strong>
-                            <p className="mb-0">{product.place_of_origin}</p>
-                        </div>
-
                     </div>
                 </div>
             </div>
