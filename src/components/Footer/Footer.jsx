@@ -12,7 +12,7 @@ function Footer() {
                         <p>Porchetta, scienza e follia.<br />La combinazione perfetta.</p>
                     </div>
                     {/* Pig Image Placeholder */}
-                    <div className={`${styles.placeholder} ${styles.pigPlaceholder}`}><img src="images/pork.png" alt="Pig" className="img-fluid"/></div>
+                    <div className={`${styles.placeholder} ${styles.pigPlaceholder}`}><img src="/images/pork.png" alt="Pig" className="img-fluid"/></div>
                 </div>
 
                 <div className={styles.divider}></div>
@@ -38,7 +38,7 @@ function Footer() {
                 {/* Column 3: Contact/Lab */}
                 <div className={`${styles.footerCol} ${styles.contactCol}`}>
                  
-                    <div className={`${styles.placeholder} ${styles.beakerPlaceholder}`}><img src="images/potion.png" alt="Potion" className="img-fluid"/></div>
+                    <div className={`${styles.placeholder} ${styles.beakerPlaceholder}`}><img src="/images/potion.png" alt="Potion" className="img-fluid"/></div>
                     <div className={styles.contactInfo}>
                         <h3 className={styles.colHeading}>LABORATORIO</h3>
                         <ul className={styles.contactList}>
