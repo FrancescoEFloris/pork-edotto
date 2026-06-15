@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import CardProduct from './CardProduct'
 import ReviewsListSingleProduct from "../Reviews/ReviewsListSingleProduct"
 import useFetch from '../../hooks/useFetch';
+import styles from "./ProductsList.module.css";
 
 
 function ProductDetail() {
@@ -21,9 +22,9 @@ function ProductDetail() {
         <main>
             <CardProduct product={product} />
 
-            <div className="container my-4">
+            <div className={` container`}>
                 <h3>Recensioni ({product.reviewsCount || 0})</h3>
-                <ReviewsListSingleProduct reviews={product?.reviews || []} />
+                <ReviewsListSingleProduct reviews={product?.reviews || []}  />
             </div>
         </main>
     );
