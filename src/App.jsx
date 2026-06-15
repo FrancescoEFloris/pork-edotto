@@ -6,12 +6,14 @@ import ProductsList from "./components/Products/ProductsList";
 import Layout from "./components/Layout";
 import NotFound from './components/NotFound';
 import PageReview from "./components/Reviews/PageReview.jsx";
+import ScrollToTop from "./components/ScrollToTop";
 // import styles from "./index.css";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
