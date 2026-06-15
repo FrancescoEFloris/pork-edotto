@@ -17,6 +17,7 @@ function ProductsList() {
 
     const { data: products, loading, error } = useFetch(endpoint);
 
+
     function handleFilter(activeFilters) {
         setSelectedCategory(activeFilters.category);
         setSearchQuery(activeFilters.search);
@@ -68,10 +69,11 @@ function ProductsList() {
                             <div key={thisProduct.id} className={`${styles.productCard}`}>
                                 <div className={`${styles.prodTextContent}`}>
                                     <h3>{thisProduct.name}</h3>
+                                    <div className={styles.priceTag}>€ {thisProduct.price.toFixed(2).replace('.', ',')}</div>
                                     <p>{thisProduct.description}</p>
                                 </div>
                                 <Link to={`/products/${thisProduct.id}`} >
-                                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img img-fluid w-100' />
+                                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
                                 </Link>
                             </div>
                         ))}
