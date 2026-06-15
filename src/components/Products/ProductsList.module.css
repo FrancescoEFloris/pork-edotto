@@ -34,6 +34,16 @@
     min-height: 125px;
 }
 
+.prodTextContent h3 {
+    text-align: center;
+    font-style: oblique;
+    font-weight: 700;
+}
+
+.prodTextContent p {
+    font-size: 20px;
+}
+
 .form {
     background-color: #fcfbf8;
     /* Bianco carta/pergamena chiarissima */

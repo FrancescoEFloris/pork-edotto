@@ -18,7 +18,7 @@
     background-attachment: fixed;
 
     color: var(--dark-brown);
-    margin-bottom: 3rem;
+
 }
 
 /* HERO */
@@ -153,10 +153,11 @@
     display: inline-block;
     margin-top: 2rem;
     padding: 1rem 2rem;
-    border: 3px solid var(--olive);
-    color: var(--olive);
-    font-weight: bold;
+    border: 10px solid var(--red);
+    color: var(--red);
+    font-weight: 900;
     text-transform: uppercase;
     transform: rotate(-4deg);
     opacity: 0.7;
+    margin-bottom: 30px;
 }

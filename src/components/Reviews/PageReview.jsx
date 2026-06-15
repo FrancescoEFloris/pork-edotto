@@ -16,7 +16,7 @@ function PageReview() {
     return (
         <div className="container-fluid p-0">
             <div className={styles.container + "my-0"}>
-                <div className={styles.panino + " p-4 rounded mb-5"}>
+                <div className={styles.panino + " p-4 rounded"}>
                     <h2 className={styles.paninoTitle + " text-center fw-bold text-black mb-4"}>
                         The best science sandwich 1#
                     </h2>
