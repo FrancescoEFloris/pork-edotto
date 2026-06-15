@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import useFetch from "../../hooks/useFetch.js";
 
+function DishCard({ dish }) {
+    if (!dish) return null;
+    const formattedPrice = dish.price.toFixed(2).replace('.', ',');
+
+    return (
+        <div className={styles.carouselItem}>
+            <Link to={`/products/${dish.id}`}>
+                <img src={dish.image} alt={dish.name} />
+            </Link>
+            <h3>{dish.name}</h3>
+            <p>€ {formattedPrice}</p>
+        </div>
+    );
+}
 
 function DishCarousel({ title, endpoint }) {
 
@@ -32,53 +46,27 @@ function DishCarousel({ title, endpoint }) {
     if (error) return <p>Errore nel caricamento di {title}: {error}</p>;
 
     return (
-        <div className={`${styles.restaurantCard}`}>
-            <h2>{title}</h2>
-
+        <div>
+            <h2 className="text-center">{title}</h2>
+            <div className="d-flex justify-content-around">
+                <button onClick={prevDish} className={`${styles.prevBtn} btn btn-outline-secondary`}>
+                    <span className="arrow">&larr;</span> Prev
+                </button>
+                <button onClick={nextDish} className={`${styles.nextBtn} btn btn-outline-secondary`}>
+                    Next <span className="arrow">&rarr;</span>
+                </button>
+            </div>
             {loading ? (
                 <p>Caricamento {title.toLowerCase()}...</p>
             ) : dishes.length > 0 && currentDish ? (
-                <div>
-
-                    <div className="d-flex justify-content-around">
-                        <button onClick={prevDish} className={`${styles.prevBtn} btn btn-outline-secondary`}>
-                            <span className="arrow">&larr;</span> Prev
-                        </button>
-                        <button onClick={nextDish} className={`${styles.nextBtn} btn btn-outline-secondary`}>
-                            Next <span className="arrow">&rarr;</span>
-                        </button>
-                    </div>
-
-                    <div className={`${styles.carouselContainer}`}>
-
-                        <div className={`${styles.carouselTrack}`}>
-                            <div key={leftDish.id} className={`${styles.carouselItem}`}>
-                                <Link to={`/products/${leftDish.id}`}>
-                                    <img src={leftDish.image} alt={leftDish.name} />
-                                </Link>
-                                <h3>{leftDish.name}</h3>
-                                <p>€ {leftDish.price.toFixed(2).replace('.', ',')}</p>
-                            </div>
-
-                            <div key={currentDish.id} className={`${styles.carouselItem}`}>
-                                <Link to={`/products/${currentDish.id}`}>
-                                    <img src={currentDish.image} alt={currentDish.name} />
-                                </Link>
-                                <h3>{currentDish.name}</h3>
-                                <p>€ {currentDish.price.toFixed(2).replace('.', ',')}</p>
-                            </div>
-
-                            <div key={rightDish.id} className={`${styles.carouselItem}`}>
-                                <Link to={`/products/${rightDish.id}`}>
-                                    <img src={rightDish.image} alt={rightDish.name} />
-                                </Link>
-                                <h3>{rightDish.name}</h3>
-                                <p>€ {rightDish.price.toFixed(2).replace('.', ',')}</p>
-                            </div>
+                <div className={styles.carouselContainer}>
+                    <div className={styles.restaurantCard}>
+                        <div className={styles.carouselTrack}>
+                            <DishCard dish={leftDish} />
+                            <DishCard dish={currentDish} />
+                            <DishCard dish={rightDish} />
                         </div>
-
                     </div>
-
                 </div>
             ) : (
                 <p>Nessun elemento trovato per {title}.</p>

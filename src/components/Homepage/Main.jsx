@@ -54,6 +54,7 @@ function Main() {
                         Dal Professore
                     </label>
                 </div>
+
                 <div className='d-flex flex-wrap w-100'>
                     <div className={activeCarousel === 'evidenza' ? 'd-block w-100' : 'd-none'}>
                         <DishCarousel
