@@ -55,10 +55,12 @@
 
 /* Singolo piatto: stile "polaroid" elegante o riquadro da documento */
 .carouselItem {
+    margin-top: 15px;
+    ;
     flex: 0 0 100%;
     scroll-snap-align: center;
     background-color: #ffffff;
-    padding: 8px;
+    padding: 16px 8px;
     box-sizing: border-box;
     border: 1px solid #e0e0e0;
     /* Riquadro sottile per l'immagine */

@@ -1,0 +1,163 @@
+:root {
+    --cream: #FFF7E6;
+    --paper: #F4E8D3;
+    --beige: #E8D5B7;
+    --porchetta-red: #7A1E1E;
+    --dark-brown: #4B2E20;
+    --olive: #6E8B59;
+    --mustard: #D99A3A;
+}
+
+.aboutPage {
+    min-height: 100vh;
+
+    background-image: url('../../../imgs/sfondo.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--dark-brown);
+
+}
+
+/* HERO */
+
+.hero {
+    background: transparent;
+    border-bottom: none;
+    margin-bottom: 5rem;
+    text-align: center;
+   
+}
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dark-brown);
+     text-shadow: 1px 1px 2px rgba(255,255,255,.4);
+}
+
+.hero p {
+    color: var(--porchetta-red);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255,255,255,.4);
+}
+
+/* CHI SIAMO */
+
+.storySection {
+    margin-bottom: 6rem;
+}
+
+.storyImage {
+    width: 100%;
+    border: 8px solid white;
+    border-radius: 10px;
+    transform: rotate(-2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+}
+
+.storyCard {
+    background: var(--paper);
+    padding: 2rem;
+    border: 2px dashed #b69d74;
+    border-radius: 12px;
+}
+
+.storyCard h2 {
+    color: var(--porchetta-red);
+    margin-bottom: 1rem;
+}
+
+/* METODO SCIENTIFICO */
+
+.methodSection {
+    margin-bottom: 6rem;
+}
+
+.sectionTitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    color: var(--dark-brown);
+}
+
+.methodCard {
+    background: var(--paper);
+    padding: 2rem;
+    border-top: 6px solid var(--olive);
+    border-radius: 12px;
+    text-align: center;
+    height: 100%;
+    transition: .3s;
+}
+
+.methodCard:hover {
+    transform: translateY(-8px);
+}
+
+.methodNumber {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--mustard);
+}
+
+/* MISSION */
+
+.missionBox {
+    background: var(--paper);
+    padding: 2rem;
+    border-left: 8px solid var(--olive);
+    border-radius: 10px;
+    height: 100%;
+}
+
+.warningBox {
+    background: #f4efe4;
+    padding: 2rem;
+    border-left: 8px solid var(--mustard);
+    border-radius: 10px;
+    height: 100%;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--paper);
+    border-radius: 12px;
+    margin-top: 4rem;
+}
+
+.ctaButton {
+    background: var(--mustard);
+    border: none;
+    padding: .8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.ctaButton:hover {
+    filter: brightness(.95);
+}
+
+/* TIMBRO */
+
+.stamp {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: 10px solid var(--red);
+    color: var(--red);
+    font-weight: 900;
+    text-transform: uppercase;
+    transform: rotate(-4deg);
+    opacity: 0.7;
+    margin-bottom: 30px;
+}

@@ -1,7 +1,16 @@
-.panino {
-    background-image: url('./imgs/rev-img/sfondo generico.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 500px;
+.revCard {
+    /* Bianco carta/pergamena chiarissima */
+
+    /* Effetto doppia cornice in stile accademico */
+    border: 1px solid #1a1a1a;
+    outline: 1px solid #1a1a1a;
+    outline-offset: -6px;
+}
+
+td {
+    min-height: 90px;
+}
+
+@media (max-width: 572px) {
+    td {min-height: 150px;}
 }

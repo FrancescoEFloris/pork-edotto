@@ -1,0 +1,86 @@
+.porkinsteinChatBox {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    width: 320px;
+    border: 2px solid #a52a2a;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.porkinsteinChatBox h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.porkinsteinInputSection {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.porkinsteinInputSection input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.porkinsteinInputSection button {
+    padding: 8px 12px;
+    background: #a52a2a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.porkinsteinInputSection button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.porkinsteinResponseBox {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 60px;
+    margin-bottom: 10px;
+}
+
+.porkinsteinErrorBox {
+    background: #ffe6e6;
+    border: 1px solid red;
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.porkinsteinFab {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0;
+    border: 2px solid #a52a2a;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.porkinsteinFab img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

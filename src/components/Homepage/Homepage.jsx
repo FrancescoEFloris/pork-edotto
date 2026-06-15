@@ -1,4 +1,4 @@
-import Main from './Main.jsx'
+import Main from './Main.jsx';
 
 function HomePage() {
     return (

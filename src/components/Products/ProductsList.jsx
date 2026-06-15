@@ -1,3 +1,8 @@
+Ci pensiamo subito! Questo è il classico conflitto di Git in cui la versione sopra (issue-1) si era dimenticata l'istruzione return (facendo crashare React), mentre la versione sotto (main) ha aggiunto classi di stile migliori per le immagini (img-fluid), per i testi dei prodotti (styles.prodTextContent) e ha aggiustato i percorsi delle immagini (/images/ invece di ./imgs/).
+
+Unendo il meglio delle due versioni (mantenendo la grafica aggiornata e le scritte intatte), ecco il codice definitivo di ProductsList.jsx pulito e pronto all'uso:
+
+JavaScript
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductsList.module.css';
@@ -6,63 +11,75 @@ import useFetch from '../../hooks/useFetch.js';
 
 function ProductsList() {
     const [selectedCategory, setSelectedCategory] = useState('');
-    const endpoint = selectedCategory
-        ? `/products?category=${selectedCategory}`
-        : '/products';
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const endpoint = `/products?category=${selectedCategory}&search=${searchQuery}`;
 
     const { data: products, loading, error } = useFetch(endpoint);
+
     function handleFilter(activeFilters) {
         setSelectedCategory(activeFilters.category);
+        setSearchQuery(activeFilters.search);
     }
+
     if (error) return <p>Errore: {error}</p>;
+
     if (loading || !products) {
         return (
             <main>
                 <div className="container">
-                    <ProductsFilter onFilter={handleFilter} />
+                    <ProductsFilter
+                        onFilter={handleFilter}
+                        currentCategory={selectedCategory}
+                    />
                     <p className="text-center mt-4">Caricamento prodotti...</p>
                 </div>
             </main>
         );
     }
 
-    <main>
-        <div className="container">
-            <h1>Sperimentazioni Gastronomiche</h1>
-            <h5>Cerca il tuo Pork-odotto:</h5>
-            <ProductsFilter
-                onFilter={handleFilter}
-                currentCategory={selectedCategory} />
-            {selectedCategory === 'vegana' ? (
-                <div className="alert text-center mt-4">
-                    <img src="./imgs/maiale_anti_vegani.png" alt="maialino anti-vegani" />
-                    <h3>Sezione Vegana in Porchetteria? Fa già ridere così</h3>
-                    <p>Apprezziamo il coraggio! Ma qui dentro l'unica cosa "vegana" che troverai è il rosmarino sulla porchetta. Dai un'occhiata alle nostre delizie tradizionali, non te ne pentirai!</p>
+    return (
+        <main>
+            <div className="container">
+                <div className='mb-3'>
+                    <h1>Sperimentazioni Gastronomiche</h1>
+                    <h5>Cerca il tuo Pork-odotto:</h5>
                 </div>
-            ) : products.length === 0 ? (
-                <div className="alert alert-warning text-center mt-4">
-                    <h3>Nessun prodotto trovato</h3>
-                    <p>Non ci sono prodotti disponibili per la categoria selezionata.</p>
-                </div>
-            ) : (
-                <div className="row row-cols-2">
-                    {products.map((thisProduct) => (
-                        <div key={thisProduct.id} className={`${styles.productCard}`}>
-                            <h3>{thisProduct.name}</h3>
-                            <p>{thisProduct.description}</p>
-                            <Link to={`/products/${thisProduct.id}`} >
-                                <img src={thisProduct.image} alt={thisProduct.title} className='product-img' />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-            )
-            }
-        </div>
-    </main>
-
+                
+                <ProductsFilter
+                    onFilter={handleFilter}
+                    currentCategory={selectedCategory}
+                />
+                
+                {selectedCategory === 'vegana' ? (
+                    <div className="alert text-center mt-2 mb-0 img-fluid">
+                        <img src="/images/maiale_anti_vegani.png" alt="maialino anti-vegani" className="img-fluid mb-2"/>
+                        <h3>Sezione Vegana in Porchetteria? Fa già ridere così...</h3>
+                        <p>Apprezziamo il coraggio! Ma qui dentro l'unica cosa "vegana" che troverai è il rosmarino sulla porchetta. Dai un'occhiata alle nostre delizie tradizionali, non te ne pentirai!</p>
+                    </div>
+                ) : products.length === 0 ? (
+                    <div className="alert alert-warning text-center mt-4">
+                        <h3>Nessun prodotto trovato</h3>
+                        <p>Non ci sono prodotti disponibili per i filtri selezionati.</p>
+                    </div>
+                ) : (
+                    <div className="row row-cols-2">
+                        {products.map((thisProduct) => (
+                            <div key={thisProduct.id} className={`${styles.productCard}`}>
+                                <div className={`${styles.prodTextContent}`}>
+                                    <h3>{thisProduct.name}</h3>
+                                    <p>{thisProduct.description}</p>
+                                </div>
+                                <Link to={`/products/${thisProduct.id}`} >
+                                    <img src={thisProduct.image} alt={thisProduct.title} className='product-img img-fluid w-100' />
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </main>
+    );
 }
 
 export default ProductsList;
-
-

@@ -13,12 +13,12 @@ function Header() {
     return (<>
         <header className={`${styles.header}`}>
             <div className={`container-fluid ${styles.headContainer}`}>
-                <div className="row align-items-start position-relative container-fluid">
+                <div className="row position-relative container-fluid">
                     <div className="col-6 col-xl-3">
                         <div className={`${styles.logoContainer}`}>
                             <div className={`${styles.imgContainer}`}>
                                 <img
-                                    src="src\public\images\porkedotto-logo.png"
+                                    src="\images\porkedotto-logo.png"
                                     alt="Logo principale"
                                     className="img-fluid"
                                 />
@@ -30,7 +30,7 @@ function Header() {
                             <li><NavLink className={getNavLinkClass} to="/">Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products">Menu</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus">Chi siamo</NavLink></li>
-                            <li><NavLink className={getNavLinkClass} to="/reviews">Review</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/reviews">I Nostri Top</NavLink></li>
                         </ul>
                         <button
                             className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
@@ -45,7 +45,7 @@ function Header() {
                             <li><NavLink className={getNavLinkClass} to="/" onClick={toggleMenu}>Home</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/products" onClick={toggleMenu}>Menu</NavLink></li>
                             <li><NavLink className={getNavLinkClass} to="/aboutus" onClick={toggleMenu}>Chi siamo</NavLink></li>
-                            <li><NavLink className={getNavLinkClass} to="/reviews" onClick={toggleMenu}>Review</NavLink></li>
+                            <li><NavLink className={getNavLinkClass} to="/reviews" onClick={toggleMenu}>I nostri top</NavLink></li>
                         </ul>
                     </div>
                 </div>
