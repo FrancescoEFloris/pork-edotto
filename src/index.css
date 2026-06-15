@@ -19,13 +19,13 @@
 }
 
 /* GENERALI */
-
-
-body {
-    background-color: var(--bg-color);
+html,
+body,
+#root {
+    min-height: 100vh;
 }
 
-font body {
+body {
     background: var(--bg-color);
     font-family: var(--font-display);
     margin: 0;
