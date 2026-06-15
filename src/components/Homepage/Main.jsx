@@ -10,7 +10,9 @@ const heroBannerSection = <>
             <img src="/images/hero-banner.jpg" alt="La Scienza della Porchetta - Esperimenti di Gusto" className={`${styles.heroImage}`} />
         </picture>
         <div className={`${styles.heroContent}`}>
-            <p>Al Pork-edotto uniamo tradizione e genialità per creare panini che sfidano le leggi della fisica!</p>
+            <p className={`${styles.contentFirst}`}>Al Pork-edotto creiamo panini che</p>
+            <p className={`${styles.contentSecond}`}>sfidano le leggi della fisica!</p>
+            <p className={`${styles.contentThird}`}>(e della dieta!)</p>
         </div>
 
     </section>

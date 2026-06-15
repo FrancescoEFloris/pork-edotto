@@ -21,9 +21,29 @@
     background-color: transparent;
     position: absolute;
     top: 8%;
-    left: 15%;
-    max-width: 70%;
+    left: 5%;
     font-family: var(--font-display);
-    font-size: xx-large;
+    font-size: 50px;
     text-align: center;
+    transform: rotate(-3deg);
+}
+
+.contentFirst {
+    position: relative;
+    left: 0%;
+}
+
+.contentSecond {
+    position: relative;
+    top: -25px;
+    left: 30%;
+}
+
+.contentThird {
+    position: relative;
+    left: 90%;
+    top: -150px;
+    transform: rotate(11deg);
+    font-size: 45px;
+    text-decoration: underline;
 }
