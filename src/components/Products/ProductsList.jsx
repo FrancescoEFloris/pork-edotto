@@ -61,7 +61,7 @@ function ProductsList() {
                     <div>
                         <div className='text-center'>
                             {products.length} 
-                            {products.length === 1 ? 'prodotto trovato' : 'prodotti trovati'}
+                            {products.length === 1 ? ' prodotto trovato' : ' prodotti trovati'}
                         </div>
                         <div className="row row-cols-2">
                             {products.map((thisProduct) => (
