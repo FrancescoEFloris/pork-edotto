@@ -25,18 +25,18 @@ function CardProduct({ product }) {
                     <div className="col-md-7">
                         <div className="card-body h-100 d-flex flex-column">
                             
-                            <h7 className={styles.descriptionTitle}>
+                            <h5 className={styles.descriptionTitle}>
                                 <i className="bi bi-clipboard2-pulse me-2"></i>
                                 Scheda tecnica
-                            </h7>
+                            </h5>
                             <p className={styles.description}>
                                 {product.description}
                             </p>
 
                             <div className="mb-3">
-                                <h7  className={styles.descriptionTitle}>
+                                <h5  className={styles.descriptionTitle}>
                                     🧪 Laboratorio: 
-                                </h7>
+                                </h5>
                                  <p className={styles.description}>
                                 {product.place_of_origin}
                             </p>
