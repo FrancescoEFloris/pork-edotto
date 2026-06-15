@@ -1,4 +1,4 @@
-
+import styles from "./ProductsList.module.css"
 
 function CardProduct({ product }) {
 
@@ -9,10 +9,10 @@ function CardProduct({ product }) {
     const formattedPrice = product.price.toFixed(2).replace('.', ',');
 
     return (
-        <div className="container my-4">
-            <div className="card">
+        <div className="container my-4 ">
+            <div className={`${styles.border} ${styles.customCard} card`}>
 
-                <div className="card-header">
+                <div className={`card-header my-2 text-center ${styles.titleO}`}>
                     <h2 className="mb-0">{product.name}</h2>
                 </div>
 

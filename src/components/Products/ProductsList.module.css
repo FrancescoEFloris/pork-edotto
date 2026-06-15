@@ -62,3 +62,22 @@
 .searchBtn {
     background-color: var(--red) !important;
 }
+
+.border {
+    border: 1px solid #1a1a1a;
+    outline: 1px solid #1a1a1a;
+    outline-offset: -6px;
+}
+
+.titleO {
+    font-family: var(--font-display);
+}
+
+.customCard {
+    background-color: var(--orange);
+    color: white;
+}
+
+.customCard p {
+    font-size: large;
+}
