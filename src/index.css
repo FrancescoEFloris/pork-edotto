@@ -32,8 +32,6 @@ body {
 }
 
 main {
-    padding-top: 75px;
-    padding-left: 20px;
     background-image: url('./imgs/rev-img/sfondo generico.png');
     background-attachment: fixed;
 }
