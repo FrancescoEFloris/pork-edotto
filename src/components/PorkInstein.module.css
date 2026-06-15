@@ -84,3 +84,42 @@
     height: 100%;
     object-fit: cover;
 }
+
+.predefinedBox {
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.predefinedTitle {
+    font-size: 0.9em;
+    margin: 0 0 8px 0;
+    color: #333;
+}
+
+.predefinedButtons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.predefinedBtn {
+    background-color: #c97f7f;
+    color: #fff;
+    border: 1px solid #b3e5fc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+}
+
+.predefinedBtn:hover:not(:disabled) {
+    background-color: #b3e5fc;
+}
+
+.predefinedBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
