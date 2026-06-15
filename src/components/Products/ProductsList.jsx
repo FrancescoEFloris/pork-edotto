@@ -1,8 +1,3 @@
-Ci pensiamo subito! Questo è il classico conflitto di Git in cui la versione sopra (issue-1) si era dimenticata l'istruzione return (facendo crashare React), mentre la versione sotto (main) ha aggiunto classi di stile migliori per le immagini (img-fluid), per i testi dei prodotti (styles.prodTextContent) e ha aggiustato i percorsi delle immagini (/images/ invece di ./imgs/).
-
-Unendo il meglio delle due versioni (mantenendo la grafica aggiornata e le scritte intatte), ecco il codice definitivo di ProductsList.jsx pulito e pronto all'uso:
-
-JavaScript
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductsList.module.css';
@@ -45,15 +40,15 @@ function ProductsList() {
                     <h1>Sperimentazioni Gastronomiche</h1>
                     <h5>Cerca il tuo Pork-odotto:</h5>
                 </div>
-                
+
                 <ProductsFilter
                     onFilter={handleFilter}
                     currentCategory={selectedCategory}
                 />
-                
+
                 {selectedCategory === 'vegana' ? (
                     <div className="alert text-center mt-2 mb-0 img-fluid">
-                        <img src="/images/maiale_anti_vegani.png" alt="maialino anti-vegani" className="img-fluid mb-2"/>
+                        <img src="/images/maiale_anti_vegani.png" alt="maialino anti-vegani" className="img-fluid mb-2" />
                         <h3>Sezione Vegana in Porchetteria? Fa già ridere così...</h3>
                         <p>Apprezziamo il coraggio! Ma qui dentro l'unica cosa "vegana" che troverai è il rosmarino sulla porchetta. Dai un'occhiata alle nostre delizie tradizionali, non te ne pentirai!</p>
                     </div>
