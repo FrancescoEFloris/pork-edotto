@@ -1,8 +1,3 @@
-Ci pensiamo subito! Questo è il classico conflitto di Git in cui la versione sopra (issue-1) si era dimenticata l'istruzione return (facendo crashare React), mentre la versione sotto (main) ha aggiunto classi di stile migliori per le immagini (img-fluid), per i testi dei prodotti (styles.prodTextContent) e ha aggiustato i percorsi delle immagini (/images/ invece di ./imgs/).
-
-Unendo il meglio delle due versioni (mantenendo la grafica aggiornata e le scritte intatte), ecco il codice definitivo di ProductsList.jsx pulito e pronto all'uso:
-
-JavaScript
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductsList.module.css';
