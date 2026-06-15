@@ -14,7 +14,7 @@ function Header() {
     return (<>
         <header className={`${styles.header}`}>
             <div className={`container-fluid ${styles.headContainer}`}>
-                <div className="row align-items-start position-relative container-fluid">
+                <div className="row position-relative container-fluid">
                     <div className="col-6 col-xl-3">
                         <div className={`${styles.logoContainer}`}>
                             <div className={`${styles.imgContainer}`}>

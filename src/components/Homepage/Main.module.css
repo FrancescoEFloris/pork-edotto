@@ -1,18 +1,67 @@
 .heroBanner {
     position: relative;
     width: 100%;
-    max-width: 1920px; 
+    max-width: 1920px;
     margin: 0 auto;
-    background-color: var(--foot-color); 
-    overflow: hidden;
-    
+    background-color: var(--foot-color);
 }
 
 .heroBanner .heroImage {
     width: 100%;
     height: auto;
-    max-height: 80vh; 
-
-    object-fit: cover; 
+    max-height: 80vh;
+    object-fit: cover;
     display: block;
+    box-shadow: 0 25px 70px -20px rgba(0, 0, 0, 0.5)
+}
+
+.heroContent {
+    background-color: transparent;
+    position: absolute;
+    top: 15%;
+    left: 6%;
+    font-family: var(--font-display);
+    font-size: 35px;
+    text-align: center;
+    transform: rotate(-3deg);
+    max-width: fit-content;
+}
+
+.contentFirst {
+    position: relative;
+    left: 0%;
+}
+
+.contentSecond {
+    position: relative;
+    top: -25px;
+    left: 30%;
+}
+
+.contentThird {
+    position: relative;
+    left: 90%;
+    top: -150px;
+    transform: rotate(11deg);
+    font-size: 45px;
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .heroContent {
+        transform: scale(70%) rotate(-2deg);
+        top: 4%;
+    }
+}
+
+@media (max-width: 770px) {
+    .heroContent {
+        display: none;
+    }
+}
+
+@media (max-width: 570px) {
+    .heroBanner {
+        display: none;
+    }
 }

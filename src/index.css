@@ -34,7 +34,8 @@ font body {
 main {
     padding-top: 75px;
     padding-left: 20px;
-    margin-bottom: 16px;
+    background-image: url('./imgs/rev-img/sfondo generico.png');
+    background-attachment: fixed;
 }
 
 @media (max-width: 991px) {

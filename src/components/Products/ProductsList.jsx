@@ -46,9 +46,9 @@ function ProductsList() {
                     currentCategory={selectedCategory}
                 />
                 {selectedCategory === 'vegana' ? (
-                    <div className="alert text-center mt-4">
-                        <img src="/images/maiale_anti_vegani.png" alt="maialino anti-vegani" />
-                        <h3>Sezione Vegana in Porchetteria? Fa già ridere così</h3>
+                    <div className="alert text-center mt-2 mb-0 img-fluid">
+                        <img src="/images/maiale_anti_vegani.png" alt="maialino anti-vegani" className="img-fluid mb-2"/>
+                        <h3>Sezione Vegana in Porchetteria? Fa già ridere così...</h3>
                         <p>Apprezziamo il coraggio! Ma qui dentro l'unica cosa "vegana" che troverai è il rosmarino sulla porchetta. Dai un'occhiata alle nostre delizie tradizionali, non te ne pentirai!</p>
                     </div>
                 ) : products.length === 0 ? (
@@ -60,8 +60,10 @@ function ProductsList() {
                     <div className="row row-cols-2">
                         {products.map((thisProduct) => (
                             <div key={thisProduct.id} className={`${styles.productCard}`}>
-                                <h3>{thisProduct.name}</h3>
-                                <p>{thisProduct.description}</p>
+                                <div className={`${styles.prodTextContent}`}>
+                                    <h3>{thisProduct.name}</h3>
+                                    <p>{thisProduct.description}</p>
+                                </div>
                                 <Link to={`/products/${thisProduct.id}`} >
                                     <img src={thisProduct.image} alt={thisProduct.title} className='product-img img-fluid w-100' />
                                 </Link>

@@ -22,12 +22,7 @@
     position: sticky;
     top: 90px;
     z-index: 98;
-}
-
-
-.logoContainer {
-    display: flex;
-    align-items: center;
+    box-shadow: 0px -20px 120px 20px rgb(0 0 0);
 }
 
 .imgContainer {
@@ -42,6 +37,7 @@
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
+    z-index: 99;
 }
 
 /* Sopra i 15p */
@@ -54,11 +50,11 @@
     transition: transform 0.2s ease;
     border-radius: 8px;
     padding: 0.5rem 1rem;
+    text-wrap: nowrap;
 }
 
 .navDesktop li:hover {
     background-color: rgb(255, 255, 255);
-
     transform: scale(105%);
 }
 
@@ -92,6 +88,7 @@
         z-index: 1000;
         padding: 0;
         margin-left: auto;
+        transform: translateY(20px)
     }
 
     .hamburger .bar {
@@ -120,13 +117,13 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 51.5%;
         left: 1.5%;
         width: 100%;
         background-color: var(--bg-color);
         padding: 1.5rem 0;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        z-index: 999;
+        z-index: 90;
         opacity: 0;
         transform: translateY(-15px);
         pointer-events: none;
@@ -155,7 +152,10 @@
 
 @media (max-width: 576px) {
     .imgContainer img {
-        max-height: 80px;
+        max-height: 120px;
+    }
 
+    .navMobile {
+        top: 77%;
     }
 }

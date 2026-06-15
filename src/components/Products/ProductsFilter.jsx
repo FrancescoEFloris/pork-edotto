@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from './ProductsList.module.css';
 
 function ProductsFilter({ onFilter, currentCategory }) {
     const [category, setCategory] = useState(currentCategory || '');
@@ -32,7 +33,7 @@ function ProductsFilter({ onFilter, currentCategory }) {
     return (
         <form
             onSubmit={submitHandler}
-            className="row g-3 align-items-end rounded bg-white p-1 mt-3"
+            className={`row g-3 align-items-end rounded bg-white p-1 mt-3 ${styles.form}`}
         >
             <div className="col-12 col-md-4">
                 <label
@@ -83,7 +84,7 @@ function ProductsFilter({ onFilter, currentCategory }) {
             <div className="col-12 col-md-3">
                 <button
                     type="submit"
-                    className="btn btn-warning text-white fw-bold"
+                    className={`btn btn-warning text-white fw-bold ${styles.searchBtn}`}
                 >
                     Cerca
                 </button>
