@@ -1,3 +1,5 @@
+
+
 .heroBanner {
     position: relative;
     width: 100%;
@@ -13,4 +15,15 @@
     object-fit: cover; 
     display: block;
     box-shadow: 0 25px 70px -20px rgba(0,0,0,0.5)
+}
+
+.heroContent {
+    background-color: transparent;
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    max-width: 70%;
+    font-family: var(--font-display);
+    font-size: xx-large;
+    text-align: center;
 }
