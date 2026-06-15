@@ -54,7 +54,7 @@
 }
 
 .navDesktop li:hover {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-color);
     transform: scale(105%);
 }
 
@@ -67,7 +67,7 @@
 }
 
 .navDesktop li:has(a.active) {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-color);
     transform: scale(105%);
 }
 
