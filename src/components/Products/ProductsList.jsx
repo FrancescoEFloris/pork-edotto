@@ -37,7 +37,7 @@ function ProductsList() {
     return (
         <main>
             <div className="container">
-                <div className='mb-3'>
+                <div className='mb-3 mt-5'>
                     <h1>Sperimentazioni Gastronomiche</h1>
                     <h5>Cerca il tuo Pork-odotto:</h5>
                 </div>
@@ -60,7 +60,7 @@ function ProductsList() {
                 ) : (
                     <div>
                         <div className='text-center'>
-                            {products.length} 
+                            {products.length}
                             {products.length === 1 ? ' prodotto trovato' : ' prodotti trovati'}
                         </div>
                         <div className="row row-cols-2">
