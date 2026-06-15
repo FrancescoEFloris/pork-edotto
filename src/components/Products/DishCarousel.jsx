@@ -8,9 +8,15 @@ function DishCarousel({ title, endpoint }) {
 
     const { data, loading, error } = useFetch(endpoint);
     const [currentIndex, setCurrentIndex] = useState(0);
-
     const dishes = data ?? [];
+
+    const prevIndex = (currentIndex - 1 + dishes.length) % dishes.length;
+    const nextIndex = (currentIndex + 1) % dishes.length;
+
+    const leftDish = dishes[prevIndex];
     const currentDish = dishes[currentIndex];
+    const rightDish = dishes[nextIndex];
+
 
     function nextDish() {
         setCurrentIndex((index) =>
@@ -32,7 +38,8 @@ function DishCarousel({ title, endpoint }) {
             {loading ? (
                 <p>Caricamento {title.toLowerCase()}...</p>
             ) : dishes.length > 0 && currentDish ? (
-                <div className={`${styles.carouselContainer}`}>
+                <div>
+
                     <div className="d-flex justify-content-around">
                         <button onClick={prevDish} className={`${styles.prevBtn} btn btn-outline-secondary`}>
                             <span className="arrow">&larr;</span> Prev
@@ -42,15 +49,36 @@ function DishCarousel({ title, endpoint }) {
                         </button>
                     </div>
 
-                    <div className={`${styles.carouselTrack}`}>
-                        <div key={currentDish.id} className={`${styles.carouselItem}`}>
-                            <Link to={`/products/${currentDish.id}`}>
-                                <img src={currentDish.image} alt={currentDish.name} />
-                            </Link>
-                            <h3>{currentDish.name}</h3>
-                            <p>€ {currentDish.price.toFixed(2).replace('.', ',')}</p>
+                    <div className={`${styles.carouselContainer}`}>
+
+                        <div className={`${styles.carouselTrack}`}>
+                            <div key={leftDish.id} className={`${styles.carouselItem}`}>
+                                <Link to={`/products/${leftDish.id}`}>
+                                    <img src={leftDish.image} alt={leftDish.name} />
+                                </Link>
+                                <h3>{leftDish.name}</h3>
+                                <p>€ {leftDish.price.toFixed(2).replace('.', ',')}</p>
+                            </div>
+
+                            <div key={currentDish.id} className={`${styles.carouselItem}`}>
+                                <Link to={`/products/${currentDish.id}`}>
+                                    <img src={currentDish.image} alt={currentDish.name} />
+                                </Link>
+                                <h3>{currentDish.name}</h3>
+                                <p>€ {currentDish.price.toFixed(2).replace('.', ',')}</p>
+                            </div>
+
+                            <div key={rightDish.id} className={`${styles.carouselItem}`}>
+                                <Link to={`/products/${rightDish.id}`}>
+                                    <img src={rightDish.image} alt={rightDish.name} />
+                                </Link>
+                                <h3>{rightDish.name}</h3>
+                                <p>€ {rightDish.price.toFixed(2).replace('.', ',')}</p>
+                            </div>
                         </div>
+
                     </div>
+
                 </div>
             ) : (
                 <p>Nessun elemento trovato per {title}.</p>
