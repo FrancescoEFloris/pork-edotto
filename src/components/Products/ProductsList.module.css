@@ -14,4 +14,21 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     /* Font tipografico classico */
+    
+}
+
+.productCard img {
+    margin-top: 15px;;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    background-color: #ffffff;
+    padding: 16px 8px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    /* Riquadro sottile per l'immagine */
+    text-align: center;
+}
+
+.prodTextContent {
+    min-height: 125px;
 }
