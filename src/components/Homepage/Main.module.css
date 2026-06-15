@@ -4,14 +4,13 @@
     max-width: 1920px; 
     margin: 0 auto;
     background-color: var(--foot-color); 
-    overflow: hidden;
 }
 
 .heroBanner .heroImage {
     width: 100%;
     height: auto;
     max-height: 80vh; 
-
     object-fit: cover; 
     display: block;
+    box-shadow: 0 25px 70px -20px rgba(0,0,0,0.5)
 }
