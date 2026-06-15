@@ -1,6 +1,7 @@
 import LastProducts from './LastProducts.jsx';
 import styles from './Main.module.css';
 import PorkInstein from '../PorkInstein.jsx';
+import RandomProducts from '../Products/RandomProducts.jsx';
 
 
 const heroBannerSection = <>
@@ -25,8 +26,11 @@ function Main() {
         <>
             {heroBannerSection}
             <main>
-
-                <LastProducts />
+                <div className='d-flex flex-wrap'>
+                    <RandomProducts title="In evidenza" />
+                    <LastProducts />
+                    <RandomProducts title="Dal professore" />
+                </div>
                 <PorkInstein />
             </main>
         </>
