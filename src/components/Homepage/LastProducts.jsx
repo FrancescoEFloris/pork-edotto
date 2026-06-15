@@ -35,8 +35,10 @@ function LastProducts() {
                     <p>Caricamento piatti recenti...</p>
                 ) : dishes.length > 0 && currentDish ? (
                     <div className={`${styles.carouselContainer}`}>
-                        <button onClick={prevDish}> Prev </button>
-                        <button onClick={nextDish}> Next </button>
+                        <div className="d-flex justify-content-around">
+                            <button onClick={prevDish} className={`${styles.prevBtn} btn btn-outline-secondary`}> <span class="arrow">&larr;</span> Prev </button>
+                            <button onClick={nextDish} className={`${styles.nextBtn} btn btn-outline-secondary`}> Next <span class="arrow">&rarr;</span></button></div>
+
                         <div className={`${styles.carouselTrack}`}>
                             <div key={currentDish.id} className={`${styles.carouselItem}`}>
                                 <Link to={`/products/${currentDish.id}`}>
