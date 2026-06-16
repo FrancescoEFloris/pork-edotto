@@ -1,7 +1,7 @@
 import styles from "./NewsletterCard.module.css";
 
-function NewsletterCard({ isOpen, onClose }) {
-    if (!isOpen) return null;
+function NewsletterCard({ isVisible, onClose }) {
+   if (!isVisible) return null;
 
     return (
         <div className={styles.overlay}>

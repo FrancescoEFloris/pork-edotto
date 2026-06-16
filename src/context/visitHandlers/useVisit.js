@@ -1,8 +1,10 @@
 import { useContext } from 'react';
-import VisitorContext from './VisitorContext';
+import VisitContext from './VisitContext';
 
-export const useVisitor = () => {
-    const context = useContext(VisitorContext);
+function useVisit() {
+    const context = useContext(VisitContext);
 
     return context;
 };
+
+export default useVisit;
