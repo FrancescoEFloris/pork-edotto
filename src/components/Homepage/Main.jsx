@@ -27,9 +27,11 @@ function Main() {
     const [newsLetterState, setNewsLetterState] = useState(false);
 
     useEffect(() => {
-        console.log("isReturning =", isReturning);
-        if (isReturning) {
+        const alreadyShown = sessionStorage.getItem('newsletter_shown');
+        // console.log("isReturning =", isReturning);
+        if (isReturning && !alreadyShown) {
             setNewsLetterState(true);
+            sessionStorage.setItem('newsletter_shown', 'true');
         }
     }, [isReturning]);
 
