@@ -24,7 +24,10 @@ function Main() {
 
     return (
         <>
+
             {heroBannerSection}
+            <div className="d-flex justify-content-center my-4">
+            </div>
             <main>
                 <div className="d-flex justify-content-center my-5 gap-3">
                     <label className={`${styles.mySelectBtn} btn`}>
