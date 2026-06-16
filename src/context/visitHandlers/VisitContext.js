@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const VisitorContext = createContext(null);
+const VisitContext = createContext(null);
 
-export default VisitorContext;
+export default VisitContext;

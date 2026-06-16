@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import VisitorContext from './VisitorContext';
+import VisitContext from './VisitContext';
 
 function VisitProvider({ children }) {
     const [isReturning, setIsReturning] = useState(false);
@@ -22,3 +22,5 @@ function VisitProvider({ children }) {
         </VisitContext.Provider>
     );
 };
+
+export default VisitProvider;

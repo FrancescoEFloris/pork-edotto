@@ -1,9 +1,7 @@
 import Main from './Main.jsx';
 
 
-function HomePage() {
-  
-
+function HomePage() { 
     return (
         <>
             <Main />
