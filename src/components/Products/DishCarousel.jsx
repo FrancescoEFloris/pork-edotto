@@ -14,7 +14,7 @@ function DishCard({ dish }) {
             </Link>
             <div className="d-flex align-items-center justify-content-around">
                 <h3 className="fs-4 fw-bold">{dish.name}</h3>
-                <p>€ {formattedPrice}</p>
+                <p className="text-nowrap">€ {formattedPrice}</p>
             </div>
         </div>
     );
