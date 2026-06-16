@@ -67,8 +67,10 @@ function ProductsList() {
                             {products.map((thisProduct) => (
                                 <div key={thisProduct.id} className={`${styles.productCard}`}>
                                     <div className={`${styles.prodTextContent}`}>
-                                        <h3>{thisProduct.name}</h3>
-                                        <div className={styles.priceTag}>€ {thisProduct.price.toFixed(2).replace('.', ',')}</div>
+                                        <div className='d-flex justify-content-end'>
+                                            <h3 className='fw-bold'>{thisProduct.name}</h3>
+                                            <div className={styles.priceTag}>€ {thisProduct.price.toFixed(2).replace('.', ',')}</div>
+                                        </div>
                                         <p>{thisProduct.description}</p>
                                     </div>
                                     <Link to={`/products/${thisProduct.id}`} >

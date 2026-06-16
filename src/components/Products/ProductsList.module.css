@@ -30,8 +30,10 @@
     background: var(--red);
     color: #fff;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 15px;
     font-size: 1.1rem;
+    text-wrap: nowrap;
+    height: 50px;
 }
 
 .productCard img {
@@ -49,7 +51,7 @@
 }
 
 .prodTextContent h3 {
-    text-align: center;
+    text-align: end;
     font-family: var(--font-display);
     font-size: 2rem;
     min-height: 70px;
@@ -62,7 +64,7 @@
 }
 
 .form {
-    background-color: #fcfbf8;
+    background-color: var(--bg-color) !important;
     /* Bianco carta/pergamena chiarissima */
 
     /* Effetto doppia cornice in stile accademico */
@@ -71,11 +73,28 @@
     outline-offset: -6px;
 }
 
+.color {
+    background-color: #faf0db;
+}
+
+.color:focus {
+    background-color: #faf0db;
+    border-color: var(--bg-color);
+    box-shadow: none;
+}
+
 .form div {
     padding-bottom: 20px;
     padding-left: 50px;
 }
 
+.form select {
+    background-color: #faf0db;
+}
+
+.for select:focus {
+    box-shadow: none;
+}
 .searchBtn {
     background-color: var(--red) !important;
 }

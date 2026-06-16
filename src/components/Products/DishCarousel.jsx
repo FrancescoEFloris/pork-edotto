@@ -49,8 +49,8 @@ function DishCarousel({ title, endpoint }) {
 
     return (
         <div>
-            <h2 className="text-center">{title}</h2>
-            <div className="d-flex justify-content-around">
+            <h2 className="text-center fw-bold fs-1 text-decoration-underline">{title}</h2>
+            <div className="d-flex justify-content-around mt-5">
                 <button onClick={prevDish} className={`${styles.selectBtn} btn`}>
                     <span className="arrow">&larr;</span> Prev
                 </button>
