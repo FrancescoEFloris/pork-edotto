@@ -10,7 +10,15 @@
     height: auto;
     max-height: 80vh;
     object-fit: cover;
-    display: block;
+    box-shadow: 0 25px 70px -20px rgba(0, 0, 0, 0.5)
+}
+
+.heroBanner .heroImageSm {
+
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
     box-shadow: 0 25px 70px -20px rgba(0, 0, 0, 0.5)
 }
 
@@ -88,9 +96,18 @@
     }
 }
 
-@media (max-width: 570px) {
-    .heroBanner {
+@media (min-width: 570px) {
+    .heroImageSm {
         display: none;
+    }
+}
+
+@media (max-width: 570px) {
+    .heroImage {
+        display: none;
+    }
+    .heroContent {
+        transform: scale(45%) rotate(-2deg);
     }
 }
 
@@ -111,5 +128,5 @@
 }
 
 .mySelectBtn:active {
-    background-color: var(--bg-second-color);
+    background-color: var(--bg-second-color) !important;
 }

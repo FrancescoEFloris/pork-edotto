@@ -8,6 +8,7 @@ const heroBannerSection = (
         <section className={`${styles.heroBanner}`}>
             <picture>
                 <img src="/images/hero-banner.jpg" alt="La Scienza della Porchetta - Esperimenti di Gusto" className={`${styles.heroImage}`} />
+                <img src="/images/hero-banner-sm.png" alt="La Scienza della Porchetta - Esperimenti di Gusto" className={`${styles.heroImageSm}`} />
             </picture>
             <div className={`${styles.heroContent}`}>
                 <p className={`${styles.contentFirst}`}>Al Pork-edotto creiamo panini che</p>

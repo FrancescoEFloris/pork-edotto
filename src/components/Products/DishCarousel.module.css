@@ -139,3 +139,7 @@
 .selectBtn:hover {
     background-color: var(--bg-second-color);
 }
+
+.selectBtn:active {
+    background-color: var(--bg-second-color) !important;
+}

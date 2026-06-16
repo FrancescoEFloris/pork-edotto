@@ -42,7 +42,7 @@ function CardProduct({ product }) {
                             </p>
                             </div>
 
-                            <div className="mt-auto">
+                            <div className="mt-auto d-flex justify-content-end">
 
                                 <div className="mb-3">
                                     <span className={styles.price}>
