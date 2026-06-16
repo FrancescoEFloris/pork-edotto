@@ -15,7 +15,7 @@ function useAi(endpoint) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ messaggio: messageText }),
+                body: JSON.stringify({ message: messageText }),
             });
             setData(responseData);
         } catch (err) {
