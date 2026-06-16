@@ -48,7 +48,7 @@ function ProductsFilter({ onFilter, currentCategory }) {
                     value={search}
                     onChange={searchHandler}
                     placeholder="Nome del piatto..."
-                    className="form-control"
+                    className={`${styles.color} form-control`}
                 />
             </div>
 
@@ -63,7 +63,7 @@ function ProductsFilter({ onFilter, currentCategory }) {
                     value={category}
                     onChange={categoryHandler}
                     id="categories"
-                    className="form-select"
+                    className={`${styles.color} form-select`}
                 >
                     <option value="">Tutte</option>
                     <option value="drink">Drink</option>

@@ -86,7 +86,7 @@ function ReviewForm({ onAddReview }) {
                     onChange={(event) => setReviewContent(event.target.value)}
                 ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary fw-bold w-100">Salva recensione</button>
+            <button type="submit" className="btn fw-bold w-100">Salva recensione</button>
         </form>
     );
 }

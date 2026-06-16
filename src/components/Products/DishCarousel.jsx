@@ -12,8 +12,10 @@ function DishCard({ dish }) {
             <Link to={`/products/${dish.id}`}>
                 <img src={dish.image} alt={dish.name} />
             </Link>
-            <h3>{dish.name}</h3>
-            <p>€ {formattedPrice}</p>
+            <div className="d-flex align-items-center justify-content-around">
+                <h3 className="fs-4 fw-bold">{dish.name}</h3>
+                <p>€ {formattedPrice}</p>
+            </div>
         </div>
     );
 }
@@ -47,32 +49,34 @@ function DishCarousel({ title, endpoint }) {
 
     return (
         <div>
-            <h2 className="text-center">{title}</h2>
-            <div className="d-flex justify-content-around">
-                <button onClick={prevDish} className={`${styles.prevBtn} btn btn-outline-secondary`}>
+            <h2 className="text-center fw-bold fs-1 text-decoration-underline">{title}</h2>
+            <div className="d-flex justify-content-around mt-5">
+                <button onClick={prevDish} className={`${styles.selectBtn} btn`}>
                     <span className="arrow">&larr;</span> Prev
                 </button>
-                <button onClick={nextDish} className={`${styles.nextBtn} btn btn-outline-secondary`}>
+                <button onClick={nextDish} className={`${styles.selectBtn} btn`}>
                     Next <span className="arrow">&rarr;</span>
                 </button>
             </div>
             {loading ? (
                 <p>Caricamento {title.toLowerCase()}...</p>
             ) : dishes.length > 0 && currentDish ? (
-                <div className={styles.carouselContainer}>
-                    <div className={`${styles.restaurantCard} ${styles.sideCard}`}>
-                        <div className={styles.carouselTrack}>
-                            <DishCard dish={leftDish} />
+                <div className={`${styles.carouselContainer}`}>
+                    <div className={styles.carouselInner}>
+                        <div className={`${styles.restaurantCard} ${styles.sideCard}`}>
+                            <div className={styles.carouselTrack}>
+                                <DishCard dish={leftDish} />
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.restaurantCard}>
-                        <div className={styles.carouselTrack}>
-                            <DishCard dish={currentDish} />
+                        <div className={styles.restaurantCard}>
+                            <div className={styles.carouselTrack}>
+                                <DishCard dish={currentDish} />
+                            </div>
                         </div>
-                    </div>
-                    <div className={`${styles.restaurantCard} ${styles.sideCard}`}>
-                        <div className={styles.carouselTrack}>
-                            <DishCard dish={rightDish} />
+                        <div className={`${styles.restaurantCard} ${styles.sideCard}`}>
+                            <div className={styles.carouselTrack}>
+                                <DishCard dish={rightDish} />
+                            </div>
                         </div>
                     </div>
                 </div>

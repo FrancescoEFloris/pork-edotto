@@ -3,7 +3,6 @@
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    background-color: var(--foot-color);
 }
 
 .heroBanner .heroImage {
@@ -11,7 +10,15 @@
     height: auto;
     max-height: 80vh;
     object-fit: cover;
-    display: block;
+    box-shadow: 0 25px 70px -20px rgba(0, 0, 0, 0.5)
+}
+
+.heroBanner .heroImageSm {
+
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
     box-shadow: 0 25px 70px -20px rgba(0, 0, 0, 0.5)
 }
 
@@ -56,12 +63,70 @@
 
 @media (max-width: 770px) {
     .heroContent {
+        position: relative;
+        font-family: var(--font-display);
+        font-size: 55px;
+        max-width: 100%;
+        left: -14%;
+        text-wrap: nowrap;
+    }
+
+    .contentFirst {
+        text-wrap: nowrap;
+    }
+
+    .contentThird {
+        display: none;
+    }
+
+    .heroBanner::after {
+        content: "(e della dieta!)";
+        position: absolute;
+        bottom: 120px;
+        right: 1%;
+        transform: rotate(11deg);
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 679px ) {
+    .heroContent {
+        transform: scale(55%) rotate(-2deg);
+    }
+}
+
+@media (min-width: 570px) {
+    .heroImageSm {
         display: none;
     }
 }
 
 @media (max-width: 570px) {
-    .heroBanner {
+    .heroImage {
         display: none;
     }
+    .heroContent {
+        transform: scale(45%) rotate(-2deg);
+    }
+}
+
+.mySelectBtn {
+    background-color: var(--orange);
+    width: 170px;
+    height: 60px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    text-wrap: nowrap;
+    color: var(--bg-color);
+}
+
+.mySelectBtn:hover {
+    background-color: var(--bg-second-color);
+}
+
+.mySelectBtn:active {
+    background-color: var(--bg-second-color) !important;
 }
