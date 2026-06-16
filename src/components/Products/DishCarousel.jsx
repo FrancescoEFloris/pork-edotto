@@ -12,8 +12,10 @@ function DishCard({ dish }) {
             <Link to={`/products/${dish.id}`}>
                 <img src={dish.image} alt={dish.name} />
             </Link>
-            <h3>{dish.name}</h3>
-            <p>€ {formattedPrice}</p>
+            <div className="d-flex align-items-center justify-content-around">
+                <h3 className="fs-4 fw-bold">{dish.name}</h3>
+                <p>€ {formattedPrice}</p>
+            </div>
         </div>
     );
 }

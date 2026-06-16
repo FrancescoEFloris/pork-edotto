@@ -12,7 +12,7 @@
     flex: 0 0 calc((100% - (20px * 2)) / 3);
     min-height: 420px;
     padding: 30px 20px;
-    background-color: #fcfbf8;
+    background-color: #fffae4;;
     box-sizing: border-box;
 
     /* Effetto doppia cornice in stile accademico */
@@ -62,7 +62,7 @@
 
 /* Singolo piatto: stile "polaroid" elegante o riquadro da documento */
 .carouselItem {
-    background-color: #ffffff;
+    background-color: #fdfaea;
     padding: 16px 8px;
     box-sizing: border-box;
     border: 1px solid #e0e0e0;
