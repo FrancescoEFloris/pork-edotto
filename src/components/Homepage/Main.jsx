@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Main.module.css';
 import PorkInstein from '../PorkInstein.jsx';
 import DishCarousel from '../Products/DishCarousel.jsx';
+import NewsletterCard from './NewsletterCard.jsx';
+import useVisit from '../../context/visitHandlers/useVisit.js';
 
 const heroBannerSection = (
     <>
@@ -21,6 +23,17 @@ const heroBannerSection = (
 
 function Main() {
     const [activeCarousel, setActiveCarousel] = useState('evidenza');
+    const { isReturning } = useVisit();
+    const [newsLetterState, setNewsLetterState] = useState(false);
+
+    useEffect(() => {
+        const alreadyShown = sessionStorage.getItem('newsletter_shown');
+        // console.log("isReturning =", isReturning);
+        if (isReturning && !alreadyShown) {
+            setNewsLetterState(true);
+            sessionStorage.setItem('newsletter_shown', 'true');
+        }
+    }, [isReturning]);
 
     return (
         <>
@@ -58,6 +71,11 @@ function Main() {
                         Dal Professore
                     </label>
                 </div>
+
+                <NewsletterCard
+                    isVisible={newsLetterState}
+                    onClose={() => setNewsLetterState(false)}
+                />
 
                 <div className='d-flex flex-wrap w-100'>
                     <div className={activeCarousel === 'evidenza' ? 'd-block w-100' : 'd-none'}>

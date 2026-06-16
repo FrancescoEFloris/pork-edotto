@@ -7,10 +7,11 @@ import Layout from "./components/Layout";
 import NotFound from './components/NotFound';
 import PageReview from "./components/Reviews/PageReview.jsx";
 import ScrollToTop from "./components/ScrollToTop";
+import VisitProvider from "./context/visitHandlers/VisitProvider.jsx";
 
 function App() {
   return (
-    <>
+    <VisitProvider >
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -24,8 +25,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter >
-
-    </>
+    </VisitProvider >
   )
 }
 

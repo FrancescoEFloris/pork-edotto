@@ -18,55 +18,59 @@ export function PorkInstein() {
     return (
         <>
             {isOpen && (
-                <div className={styles.porkinsteinChatBox}>
-                    <h2>🎓 Chiedi a Pork-instein</h2>
-                    <p><em>Il genio del gusto che ti salva la sessione di studio!</em></p>
+                <div className={styles.chatOverlay} onClick={() => setIsOpen(false)}>
+                    <div className={styles.porkinsteinChatBox}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <h2>🎓 Chiedi a Pork-instein</h2>
+                        <p><em>Il genio del gusto che ti salva la sessione di studio!</em></p>
 
-                    <div className={styles.predefinedBox}>
-                        <p className={styles.predefinedTitle}>Gli altri studenti chiedono:</p>
-                        <div className={styles.predefinedButtons}>
-                            {predefinedQuestions.map((question) => (
-                                <button
-                                    key={question.id}
-                                    className={styles.predefinedBtn}
-                                    onClick={() => sendMessage(question.text)}
-                                    disabled={loading}
-                                >
-                                    {question.label}
-                                </button>
-                            ))}
+                        <div className={styles.predefinedBox}>
+                            <p className={styles.predefinedTitle}>Gli altri studenti chiedono:</p>
+                            <div className={styles.predefinedButtons}>
+                                {predefinedQuestions.map((question) => (
+                                    <button
+                                        key={question.id}
+                                        className={styles.predefinedBtn}
+                                        onClick={() => sendMessage(question.text)}
+                                        disabled={loading}
+                                    >
+                                        {question.label}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div className={styles.porkinsteinInputSection}>
-                        <input
-                            type="text"
-                            value={userMessage}
-                            onChange={(event) => setUserMessage(event.target.value)}
-                            placeholder="Chiedi pure..."
-                            disabled={loading}
-                        />
-                        <button
-                            onClick={handleSend}
-                            disabled={loading || !userMessage}
-                        >
-                            Invia
-                        </button>
-                    </div>
+                        <div className={styles.porkinsteinInputSection}>
+                            <input
+                                type="text"
+                                value={userMessage}
+                                onChange={(event) => setUserMessage(event.target.value)}
+                                placeholder="Chiedi pure..."
+                                disabled={loading}
+                            />
+                            <button
+                                onClick={handleSend}
+                                disabled={loading || !userMessage}
+                            >
+                                Invia
+                            </button>
+                        </div>
 
-                    <div className={styles.porkinsteinResponseBox}>
-                        {loading ? (
-                            <p><em>Pork-instein sta consultando i suoi appunti scientifici...</em></p>
-                        ) : (
-                            <p>{data || "Hai qualche problema? Tranquillo ci penso io"}</p>
+                        <div className={styles.porkinsteinResponseBox}>
+                            {loading ? (
+                                <p><em>Pork-instein sta consultando i suoi appunti scientifici...</em></p>
+                            ) : (
+                                <p>{data || "Hai qualche problema? Tranquillo ci penso io"}</p>
+                            )}
+                        </div>
+
+                        {error && (
+                            <div className={styles.porkinsteinErrorBox}>
+                                {error}
+                            </div>
                         )}
                     </div>
-
-                    {error && (
-                        <div className={styles.porkinsteinErrorBox}>
-                            {error}
-                        </div>
-                    )}
                 </div>
             )}
 
