@@ -109,6 +109,10 @@
     .heroImageSm {
         display: none;
     }
+
+    .selectContent::after {
+        display: none;
+    }
 }
 
 @media (max-width: 570px) {
@@ -123,6 +127,14 @@
     .heroBanner::after {
         display: none;
     }
+
+    .mySelectBtn {
+        width: 70px !important;
+        color: transparent !important;
+        font-size: 0px;
+        text-wrap: wrap;
+    }
+
 }
 
 .mySelectBtn {
@@ -135,12 +147,42 @@
     font-size: 20px;
     text-wrap: nowrap;
     color: var(--bg-color);
+    overflow: hidden;
 }
 
 .mySelectBtn:hover {
     background-color: var(--bg-second-color);
+    color: var(--red);
 }
 
 .mySelectBtn:active {
     background-color: var(--bg-second-color) !important;
 }
+
+.selectContentFirst::after {
+    content: "🌟";
+    font-size: 35px;
+    color: black;
+    position: relative;
+    top: 5px;
+    left: -93px;
+}
+
+.selectContentSecond::after {
+    content: "NEW";
+    font-size: 15px;
+    color: var(--red);
+    position: relative;
+    top: 0;
+    left: -95px;
+}
+
+.selectContentThird::after {
+    content: "🐷";
+    font-size: 35px;
+    color: black;
+    position: relative;
+    top: 2px;
+    left: -117px;
+}
+

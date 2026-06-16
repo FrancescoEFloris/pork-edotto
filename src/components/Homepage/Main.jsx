@@ -30,7 +30,7 @@ function Main() {
             </div>
             <main>
                 <div className="d-flex justify-content-center my-5 gap-3">
-                    <label className={`${styles.mySelectBtn} btn`}>
+                    <label className={`${styles.mySelectBtn} ${styles.selectContentFirst} ${styles.selectContent} btn`}>
                         <input
                             type="radio"
                             className="btn-check"
@@ -39,7 +39,7 @@ function Main() {
                         />
                         In evidenza
                     </label>
-                    <label className={`${styles.mySelectBtn} btn`}>
+                    <label className={`${styles.mySelectBtn} ${styles.selectContentSecond} ${styles.selectContent} btn`}>
                         <input
                             type="radio"
                             className="btn-check"
@@ -48,7 +48,7 @@ function Main() {
                         />
                         Ultimi piatti
                     </label>
-                    <label className={`${styles.mySelectBtn} btn`}>
+                    <label className={`${styles.mySelectBtn} ${styles.selectContentThird} ${styles.selectContent} btn`}>
                         <input
                             type="radio"
                             className="btn-check"
