@@ -43,27 +43,30 @@ function Main() {
             </div>
             <main>
                 <div className="d-flex justify-content-center my-5 gap-3">
-                    <label className={`${styles.mySelectBtn} ${styles.selectContentFirst} ${styles.selectContent} btn`}>
+                    <label className={`${styles.mySelectBtn} ${styles.selectContentFirst} ${styles.selectContent} btn ${activeCarousel === 'evidenza' ? styles.active : ''}`}>
                         <input
                             type="radio"
+                            name="carousel"
                             className="btn-check"
                             checked={activeCarousel === 'evidenza'}
                             onChange={() => setActiveCarousel('evidenza')}
                         />
                         In evidenza
                     </label>
-                    <label className={`${styles.mySelectBtn} ${styles.selectContentSecond} ${styles.selectContent} btn`}>
+                    <label className={`${styles.mySelectBtn} ${styles.selectContentSecond} ${styles.selectContent} btn ${activeCarousel === 'recenti' ? styles.active : ''}`}>
                         <input
                             type="radio"
+                            name="carousel"
                             className="btn-check"
                             checked={activeCarousel === 'recenti'}
                             onChange={() => setActiveCarousel('recenti')}
                         />
                         Ultimi piatti
                     </label>
-                    <label className={`${styles.mySelectBtn} ${styles.selectContentThird} ${styles.selectContent} btn`}>
+                    <label className={`${styles.mySelectBtn} ${styles.selectContentThird} ${styles.selectContent} btn ${activeCarousel === 'professore' ? styles.active : ''}`}>
                         <input
                             type="radio"
+                            name="carousel"
                             className="btn-check"
                             checked={activeCarousel === 'professore'}
                             onChange={() => setActiveCarousel('professore')}

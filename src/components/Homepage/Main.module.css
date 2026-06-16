@@ -159,6 +159,28 @@
     background-color: var(--bg-second-color) !important;
 }
 
+.mySelectBtn.active {
+    background-color: var(--bg-color);
+    color: var(--blue);
+    transform: scale(105%);
+}
+
+.mySelectBtn.active:hover {
+    background-color: var(--bg-second-color);
+    color: var(--red);
+}
+
+.active {
+    background-color: var(--bg-color) !important;
+    color: var(--blue);
+    transform: scale(105%);
+}
+
+.active:hover {
+    background-color: var(--bg-second-color);
+    color: var(--red);
+}
+
 .selectContentFirst::after {
     content: "🌟";
     font-size: 35px;
