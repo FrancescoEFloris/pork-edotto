@@ -25,8 +25,8 @@ function Main() {
         <>
             {heroBannerSection}
             <main>
-                <div className="d-flex justify-content-center my-4 gap-3">
-                    <label className='btn btn-outline-secondary'>
+                <div className="d-flex justify-content-center my-5 gap-3">
+                    <label className={`${styles.mySelectBtn} btn`}>
                         <input
                             type="radio"
                             className="btn-check"
@@ -35,7 +35,7 @@ function Main() {
                         />
                         In evidenza
                     </label>
-                    <label className='btn btn-outline-secondary'>
+                    <label className={`${styles.mySelectBtn} btn`}>
                         <input
                             type="radio"
                             className="btn-check"
@@ -44,7 +44,7 @@ function Main() {
                         />
                         Ultimi piatti
                     </label>
-                    <label className='btn btn-outline-secondary'>
+                    <label className={`${styles.mySelectBtn} btn`}>
                         <input
                             type="radio"
                             className="btn-check"

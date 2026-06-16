@@ -93,3 +93,19 @@
         display: none;
     }
 }
+
+.mySelectBtn {
+    background-color: var(--orange);
+    width: 170px;
+    height: 60px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    text-wrap: nowrap;
+    color: var(--bg-color);
+}
+
+.mySelectBtn:hover {
+    background-color: var(--bg-second-color);
+}

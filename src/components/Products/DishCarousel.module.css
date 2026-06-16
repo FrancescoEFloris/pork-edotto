@@ -3,7 +3,7 @@
     display: flex;
     gap: 20px;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 40px auto;
     box-sizing: border-box;
 
@@ -12,7 +12,7 @@
     width: 100%;
     height: 520px;
     /* fixed height so surrounding layout is preserved */
-    overflow: visible;
+    overflow: hidden;
     /* allow the inner element to overflow visually */
 }
 
@@ -122,4 +122,20 @@
     color: #bfa15f;
     font-size: 15px;
     letter-spacing: 1px;
+}
+
+.selectBtn {
+    background-color: var(--orange);
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    text-wrap: nowrap;
+    color: var(--bg-color);
+}
+
+.selectBtn:hover {
+    background-color: var(--bg-second-color);
 }

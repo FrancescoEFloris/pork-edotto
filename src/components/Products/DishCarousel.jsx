@@ -51,10 +51,10 @@ function DishCarousel({ title, endpoint }) {
         <div>
             <h2 className="text-center">{title}</h2>
             <div className="d-flex justify-content-around">
-                <button onClick={prevDish} className={`${styles.prevBtn} btn btn-outline-secondary`}>
+                <button onClick={prevDish} className={`${styles.selectBtn} btn`}>
                     <span className="arrow">&larr;</span> Prev
                 </button>
-                <button onClick={nextDish} className={`${styles.nextBtn} btn btn-outline-secondary`}>
+                <button onClick={nextDish} className={`${styles.selectBtn} btn`}>
                     Next <span className="arrow">&rarr;</span>
                 </button>
             </div>
