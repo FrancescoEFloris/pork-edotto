@@ -1,15 +1,22 @@
-.porkinsteinChatBox {
+.chatOverlay {
     position: fixed;
-    bottom: 95px;
-    right: 30px;
-    width: 320px;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.porkinsteinChatBox {
+    width: 500px;
     border: 2px solid #a52a2a;
     padding: 20px;
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    max-height: 400px;
+    max-height: 80vh;
+    max-width: 90vw;
     overflow-y: auto;
 }
 
