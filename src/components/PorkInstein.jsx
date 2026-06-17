@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useAI from '../hooks/useAi.js';
 import styles from './PorkInstein.module.css';
 import predefinedQuestions from '../data/questionsData.js';
@@ -6,8 +7,17 @@ import predefinedQuestions from '../data/questionsData.js';
 export function PorkInstein() {
     const [userMessage, setUserMessage] = useState('');
     const [isOpen, setIsOpen] = useState(false);
-
+    const navigate = useNavigate();
     const { sendMessage, data, loading, error } = useAI('/ai/chat');
+
+    useEffect(() => {
+
+        if (data?.redirect) {
+            console.log("Trovato redirect! Vado a:", data.redirect);
+            navigate(data.redirect);
+            setIsOpen(false);
+        }
+    }, [data, navigate]);
 
     const handleSend = () => {
         if (!userMessage.trim()) return;
@@ -61,7 +71,11 @@ export function PorkInstein() {
                             {loading ? (
                                 <p><em>Pork-instein sta consultando i suoi appunti scientifici...</em></p>
                             ) : (
-                                <p>{data || "Hai qualche problema? Tranquillo ci penso io"}</p>
+                                <p>
+                                    {typeof data === 'object' && data !== null && data.message
+                                        ? data.message
+                                        : (data || "Hai qualche problema? Tranquillo ci penso io")}
+                                </p>
                             )}
                         </div>
 

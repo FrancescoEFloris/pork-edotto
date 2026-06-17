@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import styles from './Main.module.css';
-import PorkInstein from '../PorkInstein.jsx';
 import DishCarousel from '../Products/DishCarousel.jsx';
 import NewsletterCard from './NewsletterCard.jsx';
 import useVisit from '../../context/visitHandlers/useVisit.js';
@@ -28,7 +27,6 @@ function Main() {
 
     useEffect(() => {
         const alreadyShown = sessionStorage.getItem('newsletter_shown');
-        // console.log("isReturning =", isReturning);
         if (isReturning && !alreadyShown) {
             setNewsLetterState(true);
             sessionStorage.setItem('newsletter_shown', 'true');
@@ -100,7 +98,7 @@ function Main() {
                         />
                     </div>
                 </div>
-                <PorkInstein />
+                {/* <PorkInstein /> */}
             </main>
         </>
     );
