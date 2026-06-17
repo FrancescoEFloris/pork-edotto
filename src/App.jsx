@@ -8,6 +8,7 @@ import NotFound from './components/NotFound';
 import PageReview from "./components/Reviews/PageReview.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import VisitProvider from "./context/visitHandlers/VisitProvider.jsx";
+import PorkInstein from "./components/PorkInstein.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
+        <PorkInstein />
       </BrowserRouter >
     </VisitProvider >
   )
