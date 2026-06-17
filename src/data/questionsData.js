@@ -23,6 +23,11 @@ const predefinedQuestions = [
         id: 5,
         label: "Cosa dicono della porchetta?",
         text: "cercami le recensioni sulla porchetta"
+    },
+    {
+        id: 6,
+        label: "Sono vegano, cosa mi consigli?",
+        text: "Sono vegano"
     }
 ]
 
