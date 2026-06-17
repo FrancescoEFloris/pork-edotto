@@ -59,7 +59,7 @@ function ProductsList() {
                     </div>
                 ) : (
                     <div>
-                        <div className='text-center'>
+                        <div className={`${styles.prodFoundTxt}`}>
                             {products.length}
                             {products.length === 1 ? ' prodotto trovato' : ' prodotti trovati'}
                         </div>

@@ -86,10 +86,10 @@ function PageReview() {
                         </div>
                         <div className="row mt-5">
                             <div className="col-12">
-                                <div className="p-4 bg-white rounded shadow-sm border">
-                                    <h3 className="mb-4 fw-bold text-secondary">Gli altri sfidanti in classifica</h3>
+                                <div className={`p-4 bg-white rounded shadow-sm border ${styles.revTable}`}>
+                                    <h3 className="mb-4 fw-bold">Gli altri sfidanti in classifica</h3>
                                     <div className="table-responsive">
-                                        <table className="table table-hover align-middle m-0">
+                                        <table className="table table-hover align-middle m-0 p-2">
                                             <thead className="table-light">
                                                 <tr>
                                                     <th>Posizione</th>

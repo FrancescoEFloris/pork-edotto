@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from "../Products/ProductsList.module.css";
 
 function ReviewForm({ onAddReview }) {
     const [title, setTitle] = useState("");
@@ -35,7 +36,7 @@ function ReviewForm({ onAddReview }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mt-4 p-4 bg-light border rounded shadow-sm text-start">
+        <form onSubmit={handleSubmit} className={`mt-4 p-4 bg-light border rounded shadow-sm text-start ${styles.formRev}`}>
             {formError && (
                 <div className="alert alert-danger py-2 mb-3">
                     {formError}

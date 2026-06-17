@@ -29,8 +29,8 @@ function ReviewsListSingleProduct({ reviews, onAddReview }) {
             </div>
 
             {reviews && reviews.length > 0 ? (
-                reviews.map((review) => (
-                    <div key={review.id} className={`list-group-item card mb-3 ${styles.border}`}>
+                reviews.map((review) => (<div className="d-flex flex-wrap gap-2">
+                    <div key={review.id} className={`list-group-item card mb-3 ${styles.border} ${styles.revFix}`}>
                         <div className="card-body">
                             <h5 className="mb-1">{review.title}</h5>
                             <p className="mb-1">{review.name}</p>
@@ -41,6 +41,7 @@ function ReviewsListSingleProduct({ reviews, onAddReview }) {
                             <p>{RenderStars(review.rating)}</p>
                         </div>
                     </div>
+                </div>
                 ))
             ) : (
                 <p className="text-muted text-center mt-3">Non ci sono ancora commenti per questo prodotto.</p>

@@ -33,7 +33,7 @@
     border-radius: 15px;
     font-size: 1.1rem;
     text-wrap: nowrap;
-    height: 50px;
+    height: 40px;
 }
 
 .productCard img {
@@ -56,7 +56,7 @@
     font-size: 2rem;
     min-height: 70px;
     margin: 10px;
-    color: #4b2c20;
+    color: var(--red);
 }
 
 .prodTextContent p {
@@ -92,7 +92,7 @@
     background-color: #faf0db;
 }
 
-.for select:focus {
+.form select:focus {
     box-shadow: none;
 }
 .searchBtn {
@@ -116,4 +116,51 @@
 
 .customCard p {
     font-size: large;
+}
+
+.revFix {
+    max-width: 70%;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+}
+
+.formRev {
+    background-color: var(--bg-color) !important;
+    /* Bianco carta/pergamena chiarissima */
+
+    /* Effetto doppia cornice in stile accademico */
+    border: 1px solid #1a1a1a;
+    outline: 1px solid #1a1a1a;
+    outline-offset: -6px;
+}
+
+.formRev input, .formRev textarea {
+    background-color: #faf0db;
+}
+
+.formRev button {
+    background-color: var(--bg-second-color);
+}
+
+.formRev button:hover {
+    background-color: #faf0db;
+}
+
+.formRev button:focus {
+    background-color: #faf0db;
+}
+
+
+
+.prodFoundTxt {
+    text-align: center;
+    color: var(--red);
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    font-size: 15px;
+    background-color: var(--bg-color);
+    width: fit-content;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
 }

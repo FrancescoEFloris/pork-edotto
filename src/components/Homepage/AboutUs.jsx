@@ -7,7 +7,7 @@ function AboutUs() {
         <div className={`${styles.aboutPage} p-5`}>
             {/* Hero */}
             <section className={styles.hero}>
-                <h1>Pork-edotto</h1>
+                <h1>Pork-<span className={styles.red}>edotto</span></h1>
                 <p className="lead">
                     Dove la scienza incontra la porchetta.
                 </p>
