@@ -49,13 +49,13 @@ function DishCarousel({ title, endpoint }) {
 
     return (
         <div>
-            <h2 className="text-center fw-bold fs-1 text-decoration-underline">{title}</h2>
-            <div className="d-flex justify-content-around mt-5">
+            <div className="d-flex align-items-center justify-content-center flex-wrap gap-3 mt-5">
                 <button onClick={prevDish} className={`${styles.selectBtn} btn`}>
-                    <span className="arrow">&larr;</span> Prev
+                    <span className="arrow">&larr;</span> Precedente
                 </button>
+                <h2 className="text-center fw-bold fs-1 text-decoration-underline mb-0">{title}</h2>
                 <button onClick={nextDish} className={`${styles.selectBtn} btn`}>
-                    Next <span className="arrow">&rarr;</span>
+                    Successivo <span className="arrow">&rarr;</span>
                 </button>
             </div>
             {loading ? (
