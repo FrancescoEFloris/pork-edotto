@@ -1,8 +1,8 @@
 .productCard {
-    width: 420px;
-    min-height: 420px;
-    margin: 40px auto;
-    padding: 30px 20px;
+    width: 100%;
+    max-width: 320px;
+    margin: 20px auto;
+    padding: 20px 16px;
     background-color: var(--bg-color);
     /* Bianco carta/pergamena chiarissima */
 
@@ -47,20 +47,20 @@
 }
 
 .prodTextContent {
-    min-height: 150px;
+    min-height: 110px;
 }
 
 .prodTextContent h3 {
     text-align: end;
     font-family: var(--font-display);
-    font-size: 2rem;
-    min-height: 70px;
+    font-size: 1.4rem;
+    min-height: 50px;
     margin: 10px;
     color: var(--red);
 }
 
 .prodTextContent p {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .form {
@@ -86,6 +86,12 @@
 .form div {
     padding-bottom: 20px;
     padding-left: 50px;
+}
+
+@media (max-width: 576px) {
+    .form div {
+        padding-left: 12px;
+    }
 }
 
 .form select {
@@ -119,7 +125,7 @@
 }
 
 .revFix {
-    max-width: 70%;
+    width: 70%;
     margin: 0 auto;
     background-color: var(--bg-color);
 }

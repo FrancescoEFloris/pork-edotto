@@ -63,7 +63,7 @@ function ProductsList() {
                             {products.length}
                             {products.length === 1 ? ' prodotto trovato' : ' prodotti trovati'}
                         </div>
-                        <div className="row row-cols-2">
+                        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
                             {products.map((thisProduct) => (
                                 <div key={thisProduct.id} className={`${styles.productCard}`}>
                                     <div className={`${styles.prodTextContent}`}>
