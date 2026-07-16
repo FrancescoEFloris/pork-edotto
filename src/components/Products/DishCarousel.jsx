@@ -49,7 +49,7 @@ function DishCarousel({ title, endpoint }) {
 
     return (
         <div>
-            <div className="d-flex align-items-center justify-content-center flex-wrap gap-3 mt-5">
+            <div className={`d-flex align-items-center justify-content-center flex-wrap gap-3 mt-5 ${styles.carouselHeader}`}>
                 <button onClick={prevDish} className={`${styles.selectBtn} btn`}>
                     <span className="arrow">&larr;</span> Precedente
                 </button>

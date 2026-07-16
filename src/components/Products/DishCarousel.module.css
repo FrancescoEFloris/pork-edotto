@@ -53,6 +53,12 @@
     }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .restaurantCard {
+        min-height: auto;
+    }
+}
+
 
 /* Titolo: Autorevole e spaziato */
 .restaurantCard h2 {
@@ -145,4 +151,29 @@
 
 .selectBtn:active {
     background-color: var(--bg-second-color) !important;
+}
+
+@media (max-width: 768px) {
+    .carouselHeader {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .carouselHeader h2 {
+        font-size: 1.1rem;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .carouselHeader .selectBtn {
+        margin: 0;
+        padding: 0 10px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 20px;
+        flex-shrink: 0;
+    }
 }
