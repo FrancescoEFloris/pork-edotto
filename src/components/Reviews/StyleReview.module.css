@@ -1,3 +1,14 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.paninoTitle {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
 .revCard {
     /* Bianco carta/pergamena chiarissima */
 
@@ -8,6 +19,29 @@
     background-color: var(--bg-color);
 }
 
+.goldBorder {
+    border-color: #d4af37;
+}
+
+.silverBorder {
+    border-color: #a8a9ad;
+}
+
+.bronzeBorder {
+    border-color: #cd7f32;
+}
+
+.badge {
+    letter-spacing: 0.5px;
+}
+
+.foodImg {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 .revTable {
     border: 1px solid #1a1a1a;
     outline: 1px solid #1a1a1a;
@@ -16,8 +50,7 @@
 }
 
 .revTable table {
-    padding: 50px;
-    border-radius: 50%;
+    padding: 1.25rem;
 }
 
 .revTable td, .revTable th {
@@ -28,10 +61,51 @@
     color: var(--red);
 }
 
+.ratingCell {
+    gap: 0.5rem;
+}
+
 td {
     min-height: 90px;
 }
 
-@media (max-width: 600px) {
-    td {max-height: 150px;}
+@media (max-width: 768px) {
+    .panino {
+        padding: 1rem !important;
+    }
+
+    .foodImg {
+        aspect-ratio: 4 / 3;
+    }
+
+    .revTable table {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    td {
+        max-height: 150px;
+    }
+
+    .descCol {
+        display: none;
+    }
+
+    .container {
+        padding: 0 8px;
+    }
+
+    .revTable {
+        padding: 0.75rem !important;
+    }
+
+    .revTable table {
+        padding: 0.5rem;
+    }
+
+    .ratingCell {
+        gap: 0.25rem;
+        font-size: 0.8rem;
+    }
 }
